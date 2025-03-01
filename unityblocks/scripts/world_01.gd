@@ -1,4 +1,9 @@
 extends Node2D
+@onready var camera := $Camera as Camera2D
+
+func _ready() -> void:
+	camera.add_players($Player)
+	camera.add_players($MultiplayerPlayer)
 
 func become_host():
 	print("Become host pressed")

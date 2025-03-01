@@ -16,12 +16,7 @@ var _is_on_floor = true
 		player_id = id
 		%InputSynchronizer.set_multiplayer_authority(id)
 		
-#func _ready() -> void:
-	#if multiplayer.get_unique_id() == player_id:
-		#$Camera2D.make_current()
-	#else:
-		#$Camera2D.enabled = false
-		
+
 func _apply_animations(_delta):
 	if direction:
 		velocity.x = direction * SPEED

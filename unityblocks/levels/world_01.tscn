@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://bhq01jmiupb87"]
+[gd_scene load_steps=9 format=4 uid="uid://bhq01jmiupb87"]
 
 [ext_resource type="Script" path="res://scripts/world_01.gd" id="1_yw1rq"]
 [ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="2_qyvkc"]
 [ext_resource type="Texture2D" uid="uid://jog5bupojqi4" path="res://assets/Terrain/Terrain (16x16).png" id="3_oy14d"]
 [ext_resource type="FontFile" uid="uid://cqsajjqkx6jkj" path="res://fonts/I-pixel-u.ttf" id="4_c0k8e"]
+[ext_resource type="Script" path="res://scripts/multicamera.gd" id="4_jgxc1"]
+[ext_resource type="PackedScene" uid="uid://bcjgp15qo6x8u" path="res://actors/multiplayer_player.tscn" id="4_vyrkl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewo5w"]
 texture = ExtResource("3_oy14d")
@@ -186,8 +188,13 @@ tile_set = SubResource("TileSet_hlolr")
 [node name="Player" parent="." instance=ExtResource("2_qyvkc")]
 position = Vector2(99, 175)
 
+[node name="MultiplayerPlayer" parent="." instance=ExtResource("4_vyrkl")]
+visible = false
+
 [node name="Camera" type="Camera2D" parent="."]
 limit_left = 0
+limit_top = -280
+script = ExtResource("4_jgxc1")
 
 [node name="MultiplayerHUD" type="Control" parent="."]
 unique_name_in_owner = true
