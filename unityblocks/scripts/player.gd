@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_FORCE = -400.0
 
-@onready var animation :=  $Animation as AnimatedSprite2D
+@onready var animation := $Animation as AnimatedSprite2D
 var is_jumping := false
 
 func _physics_process(delta: float) -> void:
@@ -28,10 +28,11 @@ func _physics_process(delta: float) -> void:
 		animation.scale.x = direction
 		if !is_jumping:
 			animation.play("run")
-	elif is_jumping:
-		animation.play("jump")
+		elif is_jumping:
+			animation.play("jump")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animation.play("idle")
+
 
 	move_and_slide()
