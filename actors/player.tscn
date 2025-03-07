@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c78k16sm2u2x7"]
+[gd_scene load_steps=15 format=3 uid="uid://c78k16sm2u2x7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_rj8l3"]
 [ext_resource type="Texture2D" uid="uid://be25bmaeuliya" path="res://assets/Main Characters/Blocks/blueblock-Sheet.png" id="2_rck36"]
@@ -87,6 +87,11 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ug4e4"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_rj8l3")
@@ -101,3 +106,6 @@ autoplay = "idle"
 frame_progress = 0.549676
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_ug4e4")

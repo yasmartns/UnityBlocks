@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://jk43wsn0lv84"]
+
+[ext_resource type="Script" path="res://scripts/multiplayer 2/multiplayer_test.gd" id="1_gkag8"]
+[ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="2_6c2ru"]
+[ext_resource type="FontFile" uid="uid://dl8yj2ntmcyrb" path="res://at01.ttf" id="3_6rh7k"]
+[ext_resource type="Texture2D" uid="uid://byqmp4mpyc3d" path="res://fundo-pixilart.png" id="4_s82re"]
+
+[node name="Inicio-multiplayer" type="Node2D"]
+script = ExtResource("1_gkag8")
+player_scene = ExtResource("2_6c2ru")
+
+[node name="host" type="Button" parent="."]
+texture_filter = 1
+offset_left = 290.0
+offset_top = 168.0
+offset_right = 377.0
+offset_bottom = 196.0
+theme_override_fonts/font = ExtResource("3_6rh7k")
+text = "CRIAR SERVIDOR"
+
+[node name="join" type="Button" parent="."]
+offset_left = 279.0
+offset_top = 200.0
+offset_right = 391.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("3_6rh7k")
+text = "ENTRAR NO SERVIDOR"
+
+[node name="Fundo" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(323.5, 156)
+scale = Vector2(3.04286, 2.78571)
+texture = ExtResource("4_s82re")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 231.0
+offset_top = 84.0
+offset_right = 367.0
+offset_bottom = 107.0
+
+[connection signal="pressed" from="host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="join" to="." method="_on_join_pressed"]

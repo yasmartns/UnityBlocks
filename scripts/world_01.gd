@@ -10,7 +10,9 @@ func join_as_player_2():
 	%MultiplayerHUD.hide()
 	MultiplayerManager.join_as_player_2()
 	
-@onready var camera := $camera as Camera2D
+
 
 func _ready() -> void:
 	pass
+	
+		

@@ -1,19 +1,24 @@
 extends CharacterBody2D
 
-
+func _enter_tree() -> void:#multiplayer 2
+	set_multiplayer_authority(name.to_int())
+	
 const SPEED = 300.0
 const JUMP_FORCE = -400.0
 
 @onready var animation := $Animation as AnimatedSprite2D
 var is_jumping := false
 
-@onready var camera := $"../Camera2D"
+@onready var camera := $"../../CameraFollow"
 
-func _ready() -> void:
-	camera.add_player(self)
-	
+func _ready():
+	add_to_group("players")  # Adiciona automaticamente ao grupo "players"
 
 func _physics_process(delta: float) -> void:
+	if is_multiplayer_authority(): #multiplayer 2
+		velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down") * 400
+	move_and_slide()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bcjgp15qo6x8u"]
+[gd_scene load_steps=15 format=3 uid="uid://bcjgp15qo6x8u"]
 
 [ext_resource type="Script" path="res://scripts/multiplayer/multiplayer_controller.gd" id="1_r6yk5"]
 [ext_resource type="Texture2D" uid="uid://m3baupwemsa3" path="res://assets/Main Characters/Blocks/yellowblock-Sheet.png" id="2_yjnw2"]
@@ -87,6 +87,8 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4g2gr"]
+
 [node name="MultiplayerPlayer" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_r6yk5")
@@ -101,3 +103,6 @@ autoplay = "idle"
 frame_progress = 0.986468
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_4g2gr")
