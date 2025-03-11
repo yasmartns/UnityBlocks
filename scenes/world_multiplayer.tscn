@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b847ecg70wm5x"]
+[gd_scene load_steps=11 format=4 uid="uid://b847ecg70wm5x"]
 
 [ext_resource type="Script" path="res://scripts/world_01.gd" id="1_1srg7"]
 [ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="2_0lsjl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bermueyl8gub8" path="res://assets/Tileset/Terrain.png" id="4_l82sp"]
 [ext_resource type="PackedScene" uid="uid://gn04sehqyptm" path="res://items/door.tscn" id="5_60egq"]
 [ext_resource type="Script" path="res://scripts/door.gd" id="6_smnvc"]
+[ext_resource type="PackedScene" uid="uid://muo0nphggq7m" path="res://scenes/pause_menu.tscn" id="7_px4jx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dp35"]
 texture = ExtResource("3_mmy6v")
@@ -242,6 +243,9 @@ position = Vector2(97, 118)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("..")
+
+[node name="Pause_menu" parent="." instance=ExtResource("7_px4jx")]
+visible = false
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_Door_body_exited"]

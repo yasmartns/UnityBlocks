@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blwfwy774jpg3"
+path="res://.godot/imported/Chill-Indie-Game-Music-100-Minutes-of-Relaxing-Video-Game-Tunes-_TubeRipper.com_.mp3-a0e8fc2b27f1e9f9361034709bb9eb15.mp3str"
+
+[deps]
+
+source_file="res://efeitos sonoros/Chill-Indie-Game-Music-100-Minutes-of-Relaxing-Video-Game-Tunes-_TubeRipper.com_.mp3"
+dest_files=["res://.godot/imported/Chill-Indie-Game-Music-100-Minutes-of-Relaxing-Video-Game-Tunes-_TubeRipper.com_.mp3-a0e8fc2b27f1e9f9361034709bb9eb15.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
