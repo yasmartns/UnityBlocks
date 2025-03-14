@@ -1,8 +1,8 @@
 extends Camera2D
 
-@export var min_zoom: float = 0.5
-@export var max_zoom: float = 1
-@export var zoom_speed: float = 1
+@export var min_zoom: float = 1
+@export var max_zoom: float = 1.4
+@export var zoom_speed: float = 1.5
 
 @export var players: Array[Node] = []
 	

@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=4 uid="uid://b847ecg70wm5x"]
 
-[ext_resource type="Script" path="res://scripts/world_01.gd" id="1_1srg7"]
-[ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="2_0lsjl"]
+[ext_resource type="Script" uid="uid://ddeicrb5ub18r" path="res://scripts/world_01.gd" id="1_1srg7"]
+[ext_resource type="Script" uid="uid://b7ugjuqtp20tx" path="res://scripts/CameraFollow.gd" id="2_0lsjl"]
 [ext_resource type="Texture2D" uid="uid://jog5bupojqi4" path="res://assets/Terrain/Terrain (16x16).png" id="3_mmy6v"]
 [ext_resource type="Texture2D" uid="uid://bermueyl8gub8" path="res://assets/Tileset/Terrain.png" id="4_l82sp"]
 [ext_resource type="PackedScene" uid="uid://gn04sehqyptm" path="res://items/door.tscn" id="5_60egq"]
-[ext_resource type="Script" path="res://scripts/door.gd" id="6_smnvc"]
+[ext_resource type="Script" uid="uid://cayyksgv7spix" path="res://scripts/door.gd" id="6_smnvc"]
 [ext_resource type="PackedScene" uid="uid://muo0nphggq7m" path="res://scenes/pause_menu.tscn" id="7_px4jx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dp35"]

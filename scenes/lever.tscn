@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://bai6uurk4dkuw"]
+
+[ext_resource type="Script" uid="uid://b4mnvapjm085s" path="res://scripts/lever.gd" id="1_ncfea"]
+[ext_resource type="Texture2D" uid="uid://dtcu45pj8m5xu" path="res://Food Items/Sushi_Variety (16 x 16).png" id="2_qxmkn"]
+
+[sub_resource type="Gradient" id="1"]
+offsets = PackedFloat32Array(0, 0.610577, 1)
+colors = PackedColorArray(0.989089, 0.203845, 0, 1, 0.524245, 0.119424, 0.0143348, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="2"]
+gradient = SubResource("1")
+
+[sub_resource type="Curve" id="3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.320061), 0.2, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="4"]
+curve = SubResource("3")
+
+[sub_resource type="ParticleProcessMaterial" id="5"]
+direction = Vector3(0, -1, 0)
+gravity = Vector3(0, 100, 0)
+scale_min = 0.0
+scale_max = 0.0
+scale_curve = SubResource("4")
+color_ramp = SubResource("2")
+
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_dkrws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -18)]
+}
+
+[sub_resource type="Animation" id="Animation_8di2w"]
+resource_name = "float"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, -18), Vector2(-1, -25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_efr3d"]
+_data = {
+&"RESET": SubResource("Animation_dkrws"),
+&"float": SubResource("Animation_8di2w")
+}
+
+[node name="lever" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_ncfea")
+
+[node name="confetti" type="GPUParticles2D" parent="."]
+position = Vector2(0.166084, -43.3497)
+emitting = false
+amount = 32
+explosiveness = 0.6
+randomness = 0.2
+process_material = SubResource("5")
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(-1, -18)
+scale = Vector2(2, 2)
+texture = ExtResource("2_qxmkn")
+region_enabled = true
+region_rect = Rect2(47.4321, 0, 16.5679, 16.5)
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("6")
+
+[node name="victoryFx" type="AudioStreamPlayer2D" parent="."]
+volume_db = -25.0
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_efr3d")
+}
+autoplay = "float"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

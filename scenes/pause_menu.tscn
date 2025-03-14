@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://muo0nphggq7m"]
 
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_0vb2g"]
+[ext_resource type="Script" uid="uid://ch07u01fn2id" path="res://scripts/pause_menu.gd" id="1_0vb2g"]
 [ext_resource type="Theme" uid="uid://di1uyrlheoldq" path="res://themes/defalt_btn.tres" id="1_csf6b"]
 [ext_resource type="FontFile" uid="uid://cqsajjqkx6jkj" path="res://fonts/I-pixel-u.ttf" id="2_hnibp"]
 

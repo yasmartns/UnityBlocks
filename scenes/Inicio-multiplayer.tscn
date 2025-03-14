@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://jk43wsn0lv84"]
 
-[ext_resource type="Script" path="res://scripts/multiplayer 2/multiplayer_test.gd" id="1_gkag8"]
+[ext_resource type="Script" uid="uid://c04odn7gw8q1s" path="res://scripts/multiplayer 2/multiplayer_test.gd" id="1_gkag8"]
 [ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="2_6c2ru"]
 [ext_resource type="FontFile" uid="uid://dl8yj2ntmcyrb" path="res://fonts/at01.ttf" id="3_6rh7k"]
 [ext_resource type="Texture2D" uid="uid://byqmp4mpyc3d" path="res://fundo-pixilart.png" id="4_s82re"]
