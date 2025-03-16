@@ -1,19 +1,25 @@
-[gd_scene load_steps=19 format=4 uid="uid://bhq01jmiupb87"]
+[gd_scene load_steps=25 format=4 uid="uid://bhq01jmiupb87"]
 
-[ext_resource type="Script" uid="uid://ddeicrb5ub18r" path="res://scripts/world_01.gd" id="1_yw1rq"]
+[ext_resource type="Script" path="res://scripts/world_01.gd" id="1_yw1rq"]
 [ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="2_qyvkc"]
+[ext_resource type="Texture2D" uid="uid://b2q43cswxnwl2" path="res://assets/Background/background-clouds.png" id="3_1j4s7"]
 [ext_resource type="Texture2D" uid="uid://bermueyl8gub8" path="res://assets/Tileset/Terrain.png" id="3_5udkp"]
 [ext_resource type="Texture2D" uid="uid://jog5bupojqi4" path="res://assets/Terrain/Terrain (16x16).png" id="3_oy14d"]
 [ext_resource type="PackedScene" uid="uid://gn04sehqyptm" path="res://items/door.tscn" id="4_2e0v6"]
-[ext_resource type="Script" uid="uid://cayyksgv7spix" path="res://scripts/door.gd" id="5_q6a27"]
+[ext_resource type="Texture2D" uid="uid://c20rh78167agd" path="res://assets/Background/cloud-01.png" id="4_r1gyy"]
+[ext_resource type="Texture2D" uid="uid://cvpn4es005u5a" path="res://assets/Background/cloud-02.png" id="5_673k2"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="5_q6a27"]
 [ext_resource type="PackedScene" uid="uid://bai6uurk4dkuw" path="res://scenes/lever.tscn" id="7_0heyt"]
 [ext_resource type="PackedScene" uid="uid://bcjgp15qo6x8u" path="res://actors/multiplayer_player.tscn" id="8_ydye3"]
 [ext_resource type="PackedScene" uid="uid://muo0nphggq7m" path="res://scenes/pause_menu.tscn" id="9_ls5nh"]
 [ext_resource type="AudioStream" uid="uid://blwfwy774jpg3" path="res://efeitos sonoros/Chill-Indie-Game-Music-100-Minutes-of-Relaxing-Video-Game-Tunes-_TubeRipper.com_.mp3" id="10_1v3bt"]
-[ext_resource type="Script" uid="uid://b7ugjuqtp20tx" path="res://scripts/CameraFollow.gd" id="11_xc86x"]
-[ext_resource type="Script" uid="uid://cds7dkkpmt3dw" path="res://scripts/transition.gd" id="12_l86n5"]
-[ext_resource type="Shader" uid="uid://fhppjqfr4hwu" path="res://shaders/transition.gdshader" id="13_dgy4p"]
-[ext_resource type="Script" uid="uid://6ejenf15r0h3" path="res://scripts/color_rect.gd" id="14_4qpc8"]
+[ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="11_xc86x"]
+[ext_resource type="Script" path="res://scripts/transition.gd" id="12_l86n5"]
+[ext_resource type="Shader" path="res://shaders/transition.gdshader" id="13_dgy4p"]
+[ext_resource type="Script" path="res://scripts/color_rect.gd" id="14_4qpc8"]
+[ext_resource type="PackedScene" uid="uid://d3krcucth7r5w" path="res://items/botao_pressao.tscn" id="15_p3l01"]
+[ext_resource type="PackedScene" uid="uid://b45r26snk7s0" path="res://items/plataforma.tscn" id="16_fyqat"]
+[ext_resource type="Texture2D" uid="uid://dwchtoqckr3m6" path="res://assets/Background/background-01.png" id="17_5yqni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dp35"]
 texture = ExtResource("3_oy14d")
@@ -239,6 +245,53 @@ script = ExtResource("1_yw1rq")
 metadata/_edit_vertical_guides_ = [-34.0, 749.0]
 metadata/_edit_horizontal_guides_ = [383.0, 384.0, -2.0]
 
+[node name="BG" type="Node2D" parent="."]
+
+[node name="DistantBG" type="Parallax2D" parent="BG"]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-2, -14)
+repeat_size = Vector2(304, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/DistantBG"]
+position = Vector2(0, 1)
+scale = Vector2(3, 3)
+texture = ExtResource("17_5yqni")
+centered = false
+
+[node name="Clouds" type="Parallax2D" parent="BG"]
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(-196, -46)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Clouds"]
+position = Vector2(3, 141)
+scale = Vector2(3, 3)
+texture = ExtResource("3_1j4s7")
+centered = false
+
+[node name="Clouds2" type="Parallax2D" parent="BG"]
+repeat_size = Vector2(500, 0)
+autoscroll = Vector2(-60, 0)
+repeat_times = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Clouds2"]
+position = Vector2(22, 13)
+scale = Vector2(3, 3)
+texture = ExtResource("4_r1gyy")
+centered = false
+
+[node name="Clouds3" type="Parallax2D" parent="BG"]
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(500, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Clouds3"]
+position = Vector2(209, 9)
+scale = Vector2(3, 3)
+texture = ExtResource("5_673k2")
+centered = false
+
 [node name="CameraFollow" type="Camera2D" parent="."]
 position = Vector2(313, 243)
 limit_left = 0
@@ -261,10 +314,10 @@ next_level = "res://levels/world_02.tscn"
 position = Vector2(97, 118)
 
 [node name="Player" parent="Players" groups=["players"] instance=ExtResource("2_qyvkc")]
-position = Vector2(2, 57)
+position = Vector2(4, 23)
 
 [node name="MultiplayerPlayer" parent="Players" groups=["players"] instance=ExtResource("8_ydye3")]
-position = Vector2(45, 53)
+position = Vector2(2, 23)
 
 [node name="Pause_menu" parent="." instance=ExtResource("9_ls5nh")]
 visible = false
@@ -278,11 +331,19 @@ script = ExtResource("12_l86n5")
 
 [node name="color_rect" type="ColorRect" parent="transition"]
 material = SubResource("ShaderMaterial_gin1p")
-offset_left = 8.0
-offset_right = 759.0
-offset_bottom = 381.0
+offset_left = 14.0
+offset_top = 1.0
+offset_right = 765.0
+offset_bottom = 382.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("14_4qpc8")
+
+[node name="BotaoPressao" parent="." node_paths=PackedStringArray("plataforma") instance=ExtResource("15_p3l01")]
+position = Vector2(458, 278)
+plataforma = NodePath("../Plataforma")
+
+[node name="Plataforma" parent="." instance=ExtResource("16_fyqat")]
+position = Vector2(360, 296)
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_Door_body_exited"]
