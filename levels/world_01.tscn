@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bhq01jmiupb87"]
+[gd_scene load_steps=29 format=4 uid="uid://bhq01jmiupb87"]
 
 [ext_resource type="Script" path="res://scripts/world_01.gd" id="1_yw1rq"]
 [ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="2_qyvkc"]
@@ -20,6 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://d3krcucth7r5w" path="res://items/botao_pressao.tscn" id="15_p3l01"]
 [ext_resource type="PackedScene" uid="uid://b45r26snk7s0" path="res://items/plataforma.tscn" id="16_fyqat"]
 [ext_resource type="Texture2D" uid="uid://dwchtoqckr3m6" path="res://assets/Background/background-01.png" id="17_5yqni"]
+[ext_resource type="Script" path="res://scripts/lava_area.gd" id="21_8dcjj"]
+[ext_resource type="Texture2D" uid="uid://b3a3sryiyrq7p" path="res://assets/Items/Lava(Dano)/lava.png" id="22_4njd2"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="23_6hicw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dp35"]
 texture = ExtResource("3_oy14d")
@@ -240,6 +243,8 @@ shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(0.67451, 0.8, 0.894118, 1)
 shader_parameter/line_color_b = Color(0.887285, 0.932199, 0.931839, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3xny"]
+
 [node name="World-01" type="Node2D"]
 script = ExtResource("1_yw1rq")
 metadata/_edit_vertical_guides_ = [-34.0, 749.0]
@@ -314,10 +319,10 @@ next_level = "res://levels/world_02.tscn"
 position = Vector2(97, 118)
 
 [node name="Player" parent="Players" groups=["players"] instance=ExtResource("2_qyvkc")]
-position = Vector2(4, 23)
+position = Vector2(-1, 26)
 
 [node name="MultiplayerPlayer" parent="Players" groups=["players"] instance=ExtResource("8_ydye3")]
-position = Vector2(2, 23)
+position = Vector2(-1, 26)
 
 [node name="Pause_menu" parent="." instance=ExtResource("9_ls5nh")]
 visible = false
@@ -331,10 +336,10 @@ script = ExtResource("12_l86n5")
 
 [node name="color_rect" type="ColorRect" parent="transition"]
 material = SubResource("ShaderMaterial_gin1p")
-offset_left = 14.0
-offset_top = 1.0
-offset_right = 765.0
-offset_bottom = 382.0
+offset_left = 17.0
+offset_top = -20.0
+offset_right = 768.0
+offset_bottom = 361.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("14_4qpc8")
 
@@ -345,6 +350,33 @@ plataforma = NodePath("../Plataforma")
 [node name="Plataforma" parent="." instance=ExtResource("16_fyqat")]
 position = Vector2(360, 296)
 
+[node name="Lava-Area" type="Area2D" parent="." node_paths=PackedStringArray("game_manager") groups=["players"]]
+position = Vector2(312, 360)
+collision_layer = 2
+script = ExtResource("21_8dcjj")
+game_manager = NodePath("../GameManager")
+
+[node name="Collision" type="CollisionShape2D" parent="Lava-Area"]
+position = Vector2(48, 0)
+shape = SubResource("RectangleShape2D_x3xny")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lava-Area"]
+texture_repeat = 2
+position = Vector2(48, 0)
+texture = ExtResource("22_4njd2")
+region_enabled = true
+region_rect = Rect2(0, 0, 112, 16)
+
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("player1", "player2", "respawn_point")]
+script = ExtResource("23_6hicw")
+player1 = NodePath("../Players/Player")
+player2 = NodePath("../Players/MultiplayerPlayer")
+respawn_point = NodePath("RespawnPoint")
+
+[node name="RespawnPoint" type="Marker2D" parent="GameManager" groups=["players"]]
+position = Vector2(171, 136)
+
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_Door_body_exited"]
 [connection signal="body_entered" from="lever" to="." method="_on_lever_body_entered"]
+[connection signal="body_entered" from="Lava-Area" to="Lava-Area" method="_on_body_entered"]

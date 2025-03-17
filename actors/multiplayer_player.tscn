@@ -1,10 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcjgp15qo6x8u"]
+[gd_scene load_steps=16 format=3 uid="uid://bcjgp15qo6x8u"]
 
-[ext_resource type="Script" uid="uid://b7nntruq6ywiw" path="res://scripts/multiplayer/multiplayer_controller.gd" id="1_r6yk5"]
+[ext_resource type="Script" path="res://scripts/multiplayer/multiplayer_controller.gd" id="1_r6yk5"]
 [ext_resource type="Texture2D" uid="uid://m3baupwemsa3" path="res://assets/Main Characters/Blocks/yellowblock-Sheet.png" id="2_yjnw2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nulo"]
 size = Vector2(20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiy0b"]
+atlas = ExtResource("2_yjnw2")
+region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t0f5x"]
 atlas = ExtResource("2_yjnw2")
@@ -44,6 +48,14 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2153i"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiy0b")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t0f5x")
@@ -99,9 +111,8 @@ shape = SubResource("RectangleShape2D_8nulo")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2153i")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.92328
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

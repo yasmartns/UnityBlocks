@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
+@export var respawn_point: Marker2D
+
 func _enter_tree() -> void:#multiplayer 2
 	set_multiplayer_authority(name.to_int())
 	
-const SPEED = 300.0
-const JUMP_FORCE = -400.0
+const SPEED = 100.0
+const JUMP_FORCE = -200.0
 
 @onready var animation := $Animation as AnimatedSprite2D
 var is_jumping := false
@@ -47,3 +49,7 @@ func _physics_process(delta: float) -> void:
 
 
 	move_and_slide()
+	
+func respawn():
+	if respawn_point:
+		position = respawn_point.position
