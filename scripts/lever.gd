@@ -5,6 +5,7 @@ extends Area2D
 @export var players: Array[Node] = []
 
 func _on_body_entered(body: Node) -> void:
+	get_tree().get_nodes_in_group("players")
 	if body.name == "Player" and !next_level == "": 
 		transition.change_scene(next_level)
 		Global.chave = true

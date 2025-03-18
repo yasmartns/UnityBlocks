@@ -177,12 +177,12 @@ stream = ExtResource("6_xyf2j")
 autoplay = true
 
 [connection signal="pressed" from="quit2" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="settings2" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="settings2" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="start2" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="settings2" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="start2" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="start2" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

@@ -14,7 +14,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("players"):
 		anim.play("pressed")
-		plataforma.get_node("AnimatedSprite2D").show()
+		plataforma.get_node("Animat").show()
 		var colisao = plataforma.get_node("CollisionShape2D")
 		colisao.set_deferred("disabled", false)
 		
