@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="UnityBlocks"
-run/main_scene="res://levels/world_01.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="uid://detp6itdfdkxj"
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 MultiplayerManager="*res://scripts/multiplayer/multiplayer_manager.gd"
+Global="*res://scripts/global.gd"
 
 [display]
 

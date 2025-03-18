@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d3krcucth7r5w"]
 
-[ext_resource type="Script" path="res://scripts/botaopressao.gd" id="1_fyihf"]
+[ext_resource type="Script" uid="uid://c817821pepekv" path="res://scripts/botaopressao.gd" id="1_fyihf"]
 [ext_resource type="Texture2D" uid="uid://bw6xeocyitobu" path="res://assets/Items/Botão&Plataforma/botão-sprite.png" id="2_0nbxw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1f4v"]

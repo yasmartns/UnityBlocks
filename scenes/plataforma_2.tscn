@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwhhfm82pejw3"]
+
+[ext_resource type="Texture2D" uid="uid://jog5bupojqi4" path="res://assets/Terrain/Terrain (16x16).png" id="2_80ily"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gik6x"]
+atlas = ExtResource("2_80ily")
+region = Rect2(264, 14, 88, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r86b7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gik6x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw3ee"]
+size = Vector2(112, 16)
+
+[node name="Plataforma-2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(28.625, -4)
+scale = Vector2(2.39489, 3.17857)
+sprite_frames = SubResource("SpriteFrames_r86b7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cw3ee")

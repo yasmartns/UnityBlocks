@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://detp6itdfdkxj"]
 
-[ext_resource type="Script" path="res://scripts/inicio_local.gd" id="1_157li"]
+[ext_resource type="Script" uid="uid://b15eyw7655bci" path="res://scripts/inicio_local.gd" id="1_157li"]
 [ext_resource type="Theme" uid="uid://di1uyrlheoldq" path="res://themes/defalt_btn.tres" id="2_j5bsh"]
 [ext_resource type="FontFile" uid="uid://dl8yj2ntmcyrb" path="res://fonts/at01.ttf" id="3_kmlc8"]
 [ext_resource type="Texture2D" uid="uid://byqmp4mpyc3d" path="res://assets/Background/fundo-pixilart.png" id="4_s30yj"]
 [ext_resource type="Texture2D" uid="uid://d3og48syaujm7" path="res://Gray_Buttons_Pixel.png" id="5_v0lq0"]
-[ext_resource type="AudioStream" uid="uid://blwfwy774jpg3" path="res://efeitos sonoros/Chill-Indie-Game-Music-100-Minutes-of-Relaxing-Video-Game-Tunes-_TubeRipper.com_.mp3" id="6_s11ps"]
+[ext_resource type="AudioStream" uid="uid://0eobv357csns" path="res://efeitos sonoros/Puddle Reflections - Aesthetic Lofi.mp3" id="6_xyf2j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2j58"]
 
@@ -173,7 +173,7 @@ sprite_frames = SubResource("SpriteFrames_17yr3")
 sprite_frames = SubResource("SpriteFrames_jlgf5")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_s11ps")
+stream = ExtResource("6_xyf2j")
 autoplay = true
 
 [connection signal="pressed" from="quit2" to="." method="_on_quit_pressed"]

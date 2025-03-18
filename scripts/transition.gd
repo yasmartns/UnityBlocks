@@ -13,4 +13,4 @@ func change_scene(path, delay = 2.5) -> void:
 
 func show_new_scene():
 	var show_trasintion = get_tree().create_tween()
-	show_trasintion.tween_property(color_rect, "thereshold", 0.0, 0.5)
+	show_trasintion.tween_property(color_rect, "thereshold", 0.0, 0.5).from(1.0)
