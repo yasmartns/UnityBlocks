@@ -1,19 +1,32 @@
 extends CharacterBody2D
 
+@export var respawn_point: Marker2D
 
-const SPEED = 300.0
-const JUMP_FORCE = -400.0
+func _enter_tree() -> void:#multiplayer 2
+	set_multiplayer_authority(name.to_int())
+	
+const SPEED = 100.0
+const JUMP_FORCE = -200.0
 
 @onready var animation := $Animation as AnimatedSprite2D
 var is_jumping := false
 
+@onready var camera := $"../../CameraFollow"
+
+func _ready():
+	add_to_group("players")  # Adiciona automaticamente ao grupo "players"
+
 func _physics_process(delta: float) -> void:
+	if is_multiplayer_authority(): #multiplayer 2
+		velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down") * 400
+	move_and_slide()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_FORCE
 		is_jumping = true
 	elif is_on_floor():
@@ -21,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
 		animation.play("run")
@@ -36,3 +49,7 @@ func _physics_process(delta: float) -> void:
 
 
 	move_and_slide()
+	
+func respawn():
+	if respawn_point:
+		position = respawn_point.position
