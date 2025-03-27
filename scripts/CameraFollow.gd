@@ -10,6 +10,9 @@ func _ready() -> void:
 	players = []
 	for node in get_tree().get_nodes_in_group("players"):
 		if node is Node2D:  players.append(node)
+		
+	players.remove_at(2)
+	print(players)
 
 
 func _process(delta):

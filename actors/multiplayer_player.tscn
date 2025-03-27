@@ -101,7 +101,7 @@ animations = [{
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4g2gr"]
 
-[node name="MultiplayerPlayer" type="CharacterBody2D"]
+[node name="MultiplayerPlayer" type="CharacterBody2D" groups=["players"]]
 collision_mask = 3
 script = ExtResource("1_r6yk5")
 

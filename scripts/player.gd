@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-@export var respawn_point: Marker2D
-
 func _enter_tree() -> void:#multiplayer 2
 	set_multiplayer_authority(name.to_int())
 	
@@ -46,10 +44,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animation.play("idle")
+		
 
 
 	move_and_slide()
 	
 func respawn():
+	var respawn_point = get_tree().get_nodes_in_group("spawn")[0]
 	if respawn_point:
 		position = respawn_point.position

@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@export var respawn_point: Marker2D
 
 const SPEED = 100.0
 const JUMP_FORCE = -400.0
@@ -44,5 +43,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func respawn():
+	var respawn_point = get_tree().get_nodes_in_group("spawn")[0]
+	print(respawn_point.position)
 	if respawn_point:
 		position = respawn_point.position

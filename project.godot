@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MultiplayerManager="*res://scripts/multiplayer/multiplayer_manager.gd"
 Global="*res://scripts/global.gd"
+Globalteste="*res://scripts/globalteste.gd"
 
 [display]
 
@@ -30,6 +31,7 @@ window/stretch/mode="viewport"
 [global_group]
 
 players=""
+spawn=""
 
 [input]
 

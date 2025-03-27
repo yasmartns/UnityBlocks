@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func change_scene(path, delay = 2.5) -> void:
 	var scene_trasition = get_tree().create_tween()
-	scene_trasition.tween_property(color_rect, "thereshold", 0.4, 0.5).set_delay(delay)
+	scene_trasition.tween_property(color_rect, "thereshold", 1.0, 0.5).set_delay(delay)
 	await scene_trasition.finished
 	assert(get_tree().change_scene_to_file(path) == OK)
 

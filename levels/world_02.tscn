@@ -390,9 +390,8 @@ texture = ExtResource("21_oyd7s")
 region_enabled = true
 region_rect = Rect2(0, 0, 112, 16)
 
-[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("respawn_point")]
+[node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("22_ymwab")
-respawn_point = NodePath("RespawnPoint")
 
 [node name="RespawnPoint" type="Marker2D" parent="GameManager" groups=["players"]]
 position = Vector2(171, 136)
