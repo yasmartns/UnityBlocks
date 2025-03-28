@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhgqcvsfmswid"]
+
+[ext_resource type="Script" uid="uid://cu3lkiihxaik8" path="res://scripts/dialogue_box.gd" id="1_tm68y"]
+[ext_resource type="Texture2D" uid="uid://dicl8oovak3sl" path="res://levels/Dialog_Box(16 x 16).png" id="2_hvmm2"]
+[ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="3_p0wdv"]
+
+[node name="dialogue_box" type="MarginContainer"]
+offset_top = -1.0
+offset_right = 129.0
+offset_bottom = 25.0
+script = ExtResource("1_tm68y")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_hvmm2")
+region_rect = Rect2(0, 0, 16.2517, 15.8083)
+
+[node name="LabelMargin" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="text_label" type="Label" parent="LabelMargin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_fonts/font = ExtResource("3_p0wdv")
+theme_override_font_sizes/font_size = 16
+text = "Abunda e penis vaginava"
+
+[node name="latter_timer_display" type="Timer" parent="."]
+one_shot = true

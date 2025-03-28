@@ -3,10 +3,15 @@ extends Area2D
 @onready var transition = get_parent().get_node("transition")
 @export var next_level : String = ""
 @export var players: Array[Node] = []
+var playersDentro = []
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("players") and !next_level == "": 
-		transition.change_scene(next_level)
+		if body not in playersDentro:
+			playersDentro.append(body)
+		
+		if playersDentro.size() >= 2:
+			transition.change_scene(next_level)
 		Global.chave = true
 	else:
 		print("No scene Loaed")

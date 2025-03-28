@@ -104,7 +104,7 @@ properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["players"]]
 collision_mask = 3
 script = ExtResource("1_rj8l3")
 
@@ -115,8 +115,9 @@ shape = SubResource("RectangleShape2D_7bc12")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_qcf8n")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.47112
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

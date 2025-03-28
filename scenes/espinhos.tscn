@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bllfwbvwni8mm"]
+
+[ext_resource type="Script" uid="uid://dl5ol4qgfcmkn" path="res://scripts/espinhos.gd" id="1_kgqjk"]
+[ext_resource type="Texture2D" uid="uid://bwau340x67xal" path="res://assets/Terrain/Spikes.png" id="2_4j36b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgqjk"]
+size = Vector2(106, 8)
+
+[node name="espinhos" type="Area2D"]
+script = ExtResource("1_kgqjk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4j36b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(14, 0)
+texture = ExtResource("2_4j36b")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(29, 0)
+texture = ExtResource("2_4j36b")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(44, 0)
+texture = ExtResource("2_4j36b")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(59, 0)
+texture = ExtResource("2_4j36b")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(74, 0)
+texture = ExtResource("2_4j36b")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(89, 0)
+texture = ExtResource("2_4j36b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(46, 5)
+shape = SubResource("RectangleShape2D_kgqjk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
