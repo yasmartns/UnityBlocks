@@ -1,7 +1,7 @@
 extends MarginContainer
 
 @onready var text_label = $LabelMargin/text_label
-@onready var latter_time_display = $latter_timer_display
+@onready var latter_timer_display = $latter_timer_display
 
 const  MAX_WIDYH = 256
 
@@ -34,5 +34,20 @@ func display_text(text_to_display: String):
 	display_latter()
 	
 func display_latter():
-		pass
-	
+		text_label.text += text[latter_index]
+		latter_index += 1
+		
+		if latter_index >= text.lenght():
+			text_display_finished.emit()
+			return
+			
+		match text[latter_index]:
+			"!", "?", ",", ".":
+				latter_timer_display.start(punctuaction_display_timer)
+			"":
+				latter_timer_display.start(space_display_timer)
+			_:
+				latter_timer_display.start(latter_display_timer)
+
+func _on_latter_timer_display_timeout() -> void:
+	display_latter()
