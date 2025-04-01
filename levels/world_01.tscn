@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bcjgp15qo6x8u" path="res://actors/multiplayer_player.tscn" id="11_jfqd0"]
 [ext_resource type="Script" uid="uid://b7ugjuqtp20tx" path="res://scripts/CameraFollow.gd" id="11_xc86x"]
 [ext_resource type="PackedScene" uid="uid://dpne25ywqny5u" path="res://scenes/lever.tscn" id="12_dp75u"]
-[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="14_ievm4"]
+[ext_resource type="PackedScene" uid="uid://cryxyf156txmu" path="res://scenes/pause_menu.tscn" id="14_ievm4"]
 [ext_resource type="Script" uid="uid://cds7dkkpmt3dw" path="res://scripts/transition.gd" id="15_o0pi2"]
 [ext_resource type="Shader" uid="uid://fhppjqfr4hwu" path="res://shaders/transition.gdshader" id="16_5fif6"]
 [ext_resource type="Texture2D" uid="uid://dwchtoqckr3m6" path="res://assets/Background/background-01.png" id="17_5yqni"]
@@ -345,7 +345,7 @@ position = Vector2(135, 272)
 
 [node name="lever" parent="." instance=ExtResource("12_dp75u")]
 position = Vector2(542, 308)
-next_level = "res://levels/world_02.tscn"
+next_level = "res://levels/tutorial.tscn"
 
 [node name="CameraFollow" type="Camera2D" parent="."]
 position = Vector2(313, 243)
@@ -416,7 +416,13 @@ position = Vector2(230, 294)
 position = Vector2(447, 291)
 
 [node name="coin4" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(59, 230)
+position = Vector2(59, 186)
+
+[node name="coin6" parent="coins" instance=ExtResource("24_o0pi2")]
+position = Vector2(58, 226)
+
+[node name="coin7" parent="coins" instance=ExtResource("24_o0pi2")]
+position = Vector2(59, 146)
 
 [node name="coin5" parent="coins" instance=ExtResource("24_o0pi2")]
 position = Vector2(310, 264)

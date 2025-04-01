@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="11_vbcni"]
 [ext_resource type="PackedScene" uid="uid://bcjgp15qo6x8u" path="res://actors/multiplayer_player.tscn" id="12_2fv1q"]
 [ext_resource type="Script" uid="uid://b7ugjuqtp20tx" path="res://scripts/CameraFollow.gd" id="13_1s5uj"]
-[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="14_2ylfg"]
+[ext_resource type="PackedScene" uid="uid://cryxyf156txmu" path="res://scenes/pause_menu.tscn" id="14_2ylfg"]
 [ext_resource type="Script" uid="uid://cds7dkkpmt3dw" path="res://scripts/transition.gd" id="15_7p3yl"]
 [ext_resource type="Shader" uid="uid://fhppjqfr4hwu" path="res://shaders/transition.gdshader" id="16_qx0wt"]
 [ext_resource type="Script" uid="uid://6ejenf15r0h3" path="res://scripts/color_rect.gd" id="17_5ikpk"]
@@ -443,6 +443,12 @@ position = Vector2(418, 297)
 
 [node name="coin4" parent="coins" instance=ExtResource("24_ssn57")]
 position = Vector2(176, 243)
+
+[node name="coin9" parent="coins" instance=ExtResource("24_ssn57")]
+position = Vector2(335, 271)
+
+[node name="coin8" parent="coins" instance=ExtResource("24_ssn57")]
+position = Vector2(0, 200)
 
 [node name="coin5" parent="coins" instance=ExtResource("24_ssn57")]
 position = Vector2(158, 337)

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="UnityBlocks"
 run/main_scene="uid://detp6itdfdkxj"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 MultiplayerManager="*res://scripts/multiplayer/multiplayer_manager.gd"
 Global="*res://scripts/global.gd"
 Globalteste="*res://scripts/globalteste.gd"
+DialogueManager="*res://scripts/singletons/dialogue_manager.gd"
 
 [display]
 
