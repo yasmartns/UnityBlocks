@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bstk5020dltbb"]
 
-[ext_resource type="Script" path="res://scripts/canvas_layer.gd" id="1_egnhb"]
+[ext_resource type="Script" uid="uid://eo2a3quf4l05" path="res://scripts/canvas_layer.gd" id="1_egnhb"]
 [ext_resource type="Texture2D" uid="uid://ddlhar0bsjmcn" path="res://Items & UI/Common Pick-ups/Coin (16 x 16).png" id="2_66wwx"]
 [ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="3_3rudn"]
 

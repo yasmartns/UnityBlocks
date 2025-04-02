@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://c78k16sm2u2x7"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_rj8l3"]
+[ext_resource type="Script" uid="uid://5u05oqf1hp74" path="res://scripts/player.gd" id="1_rj8l3"]
 [ext_resource type="Texture2D" uid="uid://be25bmaeuliya" path="res://assets/Main Characters/Blocks/blueblock-Sheet.png" id="2_rck36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bc12"]
