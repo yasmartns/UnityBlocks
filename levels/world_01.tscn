@@ -1,6 +1,6 @@
-[gd_scene load_steps=30 format=4 uid="uid://dithgdis7k544"]
+[gd_scene load_steps=32 format=4 uid="uid://dithgdis7k544"]
 
-[ext_resource type="Script" uid="uid://ddeicrb5ub18r" path="res://scripts/world_01.gd" id="1_yw1rq"]
+[ext_resource type="Script" path="res://scripts/world_01.gd" id="1_yw1rq"]
 [ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="2_qyvkc"]
 [ext_resource type="Texture2D" uid="uid://b2q43cswxnwl2" path="res://assets/Background/background-clouds.png" id="3_1j4s7"]
 [ext_resource type="Texture2D" uid="uid://bermueyl8gub8" path="res://assets/Terrain/Terrain.png" id="3_5udkp"]
@@ -8,22 +8,24 @@
 [ext_resource type="PackedScene" uid="uid://gn04sehqyptm" path="res://items/door.tscn" id="4_2e0v6"]
 [ext_resource type="Texture2D" uid="uid://c20rh78167agd" path="res://assets/Background/cloud-01.png" id="4_r1gyy"]
 [ext_resource type="Texture2D" uid="uid://cvpn4es005u5a" path="res://assets/Background/cloud-02.png" id="5_673k2"]
-[ext_resource type="Script" uid="uid://cayyksgv7spix" path="res://scripts/door.gd" id="5_q6a27"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="5_q6a27"]
+[ext_resource type="PackedScene" uid="uid://bgnofix6aq5fp" path="res://levels/world_02.tscn" id="10_r0tcg"]
 [ext_resource type="PackedScene" uid="uid://bcjgp15qo6x8u" path="res://actors/multiplayer_player.tscn" id="11_jfqd0"]
-[ext_resource type="Script" uid="uid://b7ugjuqtp20tx" path="res://scripts/CameraFollow.gd" id="11_xc86x"]
+[ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="11_xc86x"]
 [ext_resource type="PackedScene" uid="uid://dpne25ywqny5u" path="res://scenes/lever.tscn" id="12_dp75u"]
 [ext_resource type="PackedScene" uid="uid://cryxyf156txmu" path="res://scenes/pause_menu.tscn" id="14_ievm4"]
-[ext_resource type="Script" uid="uid://cds7dkkpmt3dw" path="res://scripts/transition.gd" id="15_o0pi2"]
-[ext_resource type="Shader" uid="uid://fhppjqfr4hwu" path="res://shaders/transition.gdshader" id="16_5fif6"]
+[ext_resource type="Script" path="res://scripts/transition.gd" id="15_o0pi2"]
+[ext_resource type="Shader" path="res://shaders/transition.gdshader" id="16_5fif6"]
 [ext_resource type="Texture2D" uid="uid://dwchtoqckr3m6" path="res://assets/Background/background-01.png" id="17_5yqni"]
-[ext_resource type="Script" uid="uid://6ejenf15r0h3" path="res://scripts/color_rect.gd" id="17_ao123"]
+[ext_resource type="Script" path="res://scripts/color_rect.gd" id="17_ao123"]
 [ext_resource type="PackedScene" uid="uid://d3krcucth7r5w" path="res://items/botao_pressao.tscn" id="18_qannr"]
 [ext_resource type="PackedScene" uid="uid://b45r26snk7s0" path="res://items/plataforma.tscn" id="19_xjnak"]
-[ext_resource type="Script" uid="uid://wn473gdespmc" path="res://scripts/lava_area.gd" id="20_gmex4"]
+[ext_resource type="Script" path="res://scripts/lava_area.gd" id="20_gmex4"]
 [ext_resource type="Texture2D" uid="uid://b3a3sryiyrq7p" path="res://assets/Items/Lava(Dano)/lava.png" id="21_14a6h"]
-[ext_resource type="Script" uid="uid://c83vrgewiy1ig" path="res://scripts/game_manager.gd" id="22_imfvm"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="22_imfvm"]
 [ext_resource type="AudioStream" uid="uid://0eobv357csns" path="res://efeitos sonoros/Puddle Reflections - Aesthetic Lofi.mp3" id="23_ievm4"]
 [ext_resource type="PackedScene" uid="uid://cvfpcoia8jape" path="res://scenes/coin.tscn" id="24_o0pi2"]
+[ext_resource type="PackedScene" uid="uid://bstk5020dltbb" path="res://items/canvas_layer.tscn" id="25_8ypm7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_samdc"]
 texture = ExtResource("3_oy14d")
@@ -334,6 +336,8 @@ metadata/_edit_group_ = true
 [node name="Door" parent="." instance=ExtResource("4_2e0v6")]
 position = Vector2(544, 288)
 script = ExtResource("5_q6a27")
+objetivo = 1
+destino = ExtResource("10_r0tcg")
 
 [node name="Players" type="Node" parent="."]
 
@@ -391,6 +395,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 112, 16)
 
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("player1", "player2", "respawn_point")]
+unique_name_in_owner = true
 script = ExtResource("22_imfvm")
 player1 = NodePath("../Players/MultiplayerPlayer")
 player2 = NodePath("../Players/Player")
@@ -407,25 +412,9 @@ autoplay = true
 [node name="coins" type="Node2D" parent="."]
 
 [node name="coin" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(190, 294)
+position = Vector2(440, 304)
 
-[node name="coin2" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(230, 294)
-
-[node name="coin3" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(447, 291)
-
-[node name="coin4" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(59, 186)
-
-[node name="coin6" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(58, 226)
-
-[node name="coin7" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(59, 146)
-
-[node name="coin5" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(310, 264)
+[node name="CanvasLayer" parent="." instance=ExtResource("25_8ypm7")]
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_Door_body_exited"]

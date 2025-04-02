@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bcjgp15qo6x8u"]
 
-[ext_resource type="Script" uid="uid://b7nntruq6ywiw" path="res://scripts/multiplayer/multiplayer_controller.gd" id="1_r6yk5"]
+[ext_resource type="Script" path="res://scripts/multiplayer/multiplayer_controller.gd" id="1_r6yk5"]
 [ext_resource type="Texture2D" uid="uid://m3baupwemsa3" path="res://assets/Main Characters/Blocks/yellowblock-Sheet.png" id="2_yjnw2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nulo"]

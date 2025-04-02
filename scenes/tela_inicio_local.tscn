@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://c7t230mchqqfk"]
 
-[ext_resource type="Script" uid="uid://b15eyw7655bci" path="res://scripts/inicio_local.gd" id="1_157li"]
+[ext_resource type="Script" path="res://scripts/inicio_local.gd" id="1_157li"]
 [ext_resource type="Theme" uid="uid://di1uyrlheoldq" path="res://themes/defalt_btn.tres" id="2_j5bsh"]
 [ext_resource type="FontFile" uid="uid://dl8yj2ntmcyrb" path="res://fonts/at01.ttf" id="3_kmlc8"]
 [ext_resource type="Texture2D" uid="uid://byqmp4mpyc3d" path="res://assets/Background/fundo-pixilart.png" id="4_s30yj"]
@@ -177,12 +177,12 @@ stream = ExtResource("6_xyf2j")
 autoplay = true
 
 [connection signal="pressed" from="quit2" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="settings2" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="settings2" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="start2" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="settings2" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="start2" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="start2" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

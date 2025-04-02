@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cvfpcoia8jape"]
 
-[ext_resource type="Script" uid="uid://bdqnwcljito8r" path="res://scripts/coin.gd" id="1_i64fm"]
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_i64fm"]
 [ext_resource type="Texture2D" uid="uid://e4rw2c0gruq6" path="res://Common Pick-ups/Coin (16 x 16).png" id="1_rwqht"]
 [ext_resource type="Texture2D" uid="uid://dd265ixuuym2o" path="res://Items & UI/Effects/Yellow_Sparkle (16 x 16).png" id="2_11l1o"]
 [ext_resource type="AudioStream" uid="uid://pnoh2wf623wq" path="res://efeitos sonoros/Efeito sonoro de coleta de moeda.mp3" id="4_d14el"]
