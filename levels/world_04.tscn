@@ -1,10 +1,9 @@
 [gd_scene load_steps=34 format=4 uid="uid://b4806ga1b52id"]
 
 [ext_resource type="Script" uid="uid://ddeicrb5ub18r" path="res://scripts/world_01.gd" id="1_yqvvs"]
-[ext_resource type="Texture2D" uid="uid://dwchtoqckr3m6" path="res://assets/Background/background-01.png" id="2_35s10"]
-[ext_resource type="Texture2D" uid="uid://b2q43cswxnwl2" path="res://assets/Background/background-clouds.png" id="3_5cbss"]
-[ext_resource type="Texture2D" uid="uid://c20rh78167agd" path="res://assets/Background/cloud-01.png" id="4_khxsk"]
-[ext_resource type="Texture2D" uid="uid://cvpn4es005u5a" path="res://assets/Background/cloud-02.png" id="5_xvc62"]
+[ext_resource type="Texture2D" uid="uid://di6aqn2isnugj" path="res://assets/Background/bg-vulcao.png" id="2_08wrd"]
+[ext_resource type="Texture2D" uid="uid://crvmggb7xne5y" path="res://assets/Background/cloud-01-vulcao.png" id="3_r7u25"]
+[ext_resource type="Texture2D" uid="uid://bniyxr734qopc" path="res://assets/Background/cloud-02-vulcao.png" id="4_6obpb"]
 [ext_resource type="Texture2D" uid="uid://jog5bupojqi4" path="res://assets/Terrain/Terrain (16x16).png" id="6_vojt5"]
 [ext_resource type="Texture2D" uid="uid://bermueyl8gub8" path="res://assets/Terrain/Terrain.png" id="7_f2afd"]
 [ext_resource type="Texture2D" uid="uid://bwau340x67xal" path="res://assets/Terrain/Spikes.png" id="8_k4b28"]
@@ -12,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cayyksgv7spix" path="res://scripts/door.gd" id="10_1rn8f"]
 [ext_resource type="PackedScene" uid="uid://cygdf0gvy2ubf" path="res://items/falling_platform.tscn" id="11_08wrd"]
 [ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="11_g3g5v"]
+[ext_resource type="PackedScene" uid="uid://c7t230mchqqfk" path="res://scenes/tela_inicio_local.tscn" id="11_r7u25"]
 [ext_resource type="PackedScene" uid="uid://bcjgp15qo6x8u" path="res://actors/multiplayer_player.tscn" id="12_eqh1j"]
 [ext_resource type="PackedScene" uid="uid://dpne25ywqny5u" path="res://scenes/lever.tscn" id="13_ct7bs"]
 [ext_resource type="Script" uid="uid://b7ugjuqtp20tx" path="res://scripts/CameraFollow.gd" id="14_sox81"]
@@ -315,9 +315,9 @@ repeat_size = Vector2(304, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/DistantBG"]
-position = Vector2(0, 1)
-scale = Vector2(3, 3)
-texture = ExtResource("2_35s10")
+position = Vector2(-452, -57)
+scale = Vector2(4.57812, 4.57812)
+texture = ExtResource("2_08wrd")
 centered = false
 
 [node name="Clouds" type="Parallax2D" parent="BG"]
@@ -325,12 +325,13 @@ scroll_scale = Vector2(0.7, 0.7)
 scroll_offset = Vector2(-196, -46)
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/Clouds"]
-position = Vector2(3, 141)
-scale = Vector2(3, 3)
-texture = ExtResource("3_5cbss")
+position = Vector2(-457, 151)
+scale = Vector2(4.07921, 4.07921)
+texture = ExtResource("3_r7u25")
 centered = false
 
 [node name="Clouds2" type="Parallax2D" parent="BG"]
+scroll_offset = Vector2(16, 62)
 repeat_size = Vector2(500, 0)
 autoscroll = Vector2(-60, 0)
 repeat_times = 10
@@ -338,19 +339,7 @@ repeat_times = 10
 [node name="Sprite2D" type="Sprite2D" parent="BG/Clouds2"]
 position = Vector2(22, 13)
 scale = Vector2(3, 3)
-texture = ExtResource("4_khxsk")
-centered = false
-
-[node name="Clouds3" type="Parallax2D" parent="BG"]
-scroll_scale = Vector2(0.8, 0.8)
-repeat_size = Vector2(500, 0)
-autoscroll = Vector2(-50, 0)
-repeat_times = 10
-
-[node name="Sprite2D" type="Sprite2D" parent="BG/Clouds3"]
-position = Vector2(209, 9)
-scale = Vector2(3, 3)
-texture = ExtResource("5_xvc62")
+texture = ExtResource("4_6obpb")
 centered = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -362,6 +351,8 @@ metadata/_edit_group_ = true
 [node name="Door" parent="." instance=ExtResource("9_yhjb6")]
 position = Vector2(963, 399)
 script = ExtResource("10_1rn8f")
+objetivo = 34
+destino = ExtResource("11_r7u25")
 
 [node name="FallingPlatform" parent="." instance=ExtResource("11_08wrd")]
 position = Vector2(433, 263)
@@ -376,10 +367,10 @@ position = Vector2(63, 229)
 position = Vector2(63, 182)
 
 [node name="FallingPlatform2" parent="." instance=ExtResource("11_08wrd")]
-position = Vector2(503, 238)
+position = Vector2(495, 238)
 
 [node name="FallingPlatform3" parent="." instance=ExtResource("11_08wrd")]
-position = Vector2(568, 217)
+position = Vector2(560, 216)
 
 [node name="Players" type="Node" parent="."]
 
@@ -397,7 +388,6 @@ next_level = "res://levels/world_01.tscn"
 position = Vector2(421, 264)
 zoom = Vector2(0.7, 0.7)
 limit_top = 0
-limit_right = 1095
 limit_bottom = 495
 script = ExtResource("14_sox81")
 min_zoom = 0.9
@@ -423,8 +413,7 @@ position = Vector2(283, 308)
 plataforma = NodePath("../Plataforma")
 
 [node name="Plataforma" parent="." instance=ExtResource("20_aw4f4")]
-visible = false
-position = Vector2(205, 326)
+position = Vector2(194, 326)
 
 [node name="Lava-Area" type="Area2D" parent="."]
 position = Vector2(-214, 487)
