@@ -14,10 +14,17 @@ var is_jumping := false
 func _ready():
 	add_to_group("players")  # Adiciona automaticamente ao grupo "players"
 
+
+
 func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority(): #multiplayer 2
 		velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down") * 400
 	move_and_slide()
+	
+	for platforms in get_slide_collision_count():
+		var collision = get_slide_collision(platforms)
+		if collision.get_collider().has_method("has_collided_with"):
+			collision.get_collider().has_collided_with(collision, self)
 	
 	# Add the gravity.
 	if not is_on_floor():

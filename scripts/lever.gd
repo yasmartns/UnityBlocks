@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var transition = get_parent().get_node("transition")
-@export var next_level : String = ""
+@export var next_level : String = "res://levels/world_03.tscn"
 @export var players: Array[Node] = []
 var playersDentro = []
 

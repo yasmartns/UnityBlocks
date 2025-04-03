@@ -41,6 +41,11 @@ func _physics_process(delta: float) -> void:
 
 
 	move_and_slide()
+	
+	for platforms in get_slide_collision_count():
+		var collision = get_slide_collision(platforms)
+		if collision.get_collider().has_method("has_collided_with"):
+			collision.get_collider().has_collided_with(collision, self)
 
 func respawn():
 	var respawn_point = get_tree().get_nodes_in_group("spawn")[0]
