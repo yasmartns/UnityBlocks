@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://dyt4q8yx76vt4"]
+[gd_scene load_steps=35 format=4 uid="uid://dyt4q8yx76vt4"]
 
 [ext_resource type="Script" uid="uid://ddeicrb5ub18r" path="res://scripts/world_01.gd" id="1_mtud3"]
 [ext_resource type="Texture2D" uid="uid://ksg415rpfsv6" path="res://assets/Background/ice-bg.png" id="2_8ku0a"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bwau340x67xal" path="res://assets/Terrain/Spikes.png" id="8_bx2am"]
 [ext_resource type="PackedScene" uid="uid://gn04sehqyptm" path="res://items/door.tscn" id="9_o7am6"]
 [ext_resource type="Script" uid="uid://cayyksgv7spix" path="res://scripts/door.gd" id="10_gr1l7"]
+[ext_resource type="PackedScene" uid="uid://b4806ga1b52id" path="res://levels/world_04.tscn" id="11_rm8lc"]
 [ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="11_v3okx"]
 [ext_resource type="PackedScene" uid="uid://bcjgp15qo6x8u" path="res://actors/multiplayer_player.tscn" id="12_gr283"]
 [ext_resource type="PackedScene" uid="uid://dpne25ywqny5u" path="res://scenes/lever.tscn" id="13_yyx5y"]
@@ -367,6 +368,8 @@ metadata/_edit_group_ = true
 [node name="Door" parent="." instance=ExtResource("9_o7am6")]
 position = Vector2(768, 304)
 script = ExtResource("10_gr1l7")
+objetivo = 10
+destino = ExtResource("11_rm8lc")
 
 [node name="Players" type="Node" parent="."]
 
