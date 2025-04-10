@@ -367,9 +367,6 @@ position = Vector2(-40, -2)
 position = Vector2(312, 240)
 script = ExtResource("13_qauss")
 
-[node name="Pause_menu" parent="." instance=ExtResource("14_epl0q")]
-visible = false
-
 [node name="transition" type="CanvasLayer" parent="."]
 script = ExtResource("15_pt1hf")
 
@@ -381,6 +378,9 @@ offset_right = 768.0
 offset_bottom = 361.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("17_qe4fd")
+
+[node name="Pause_menu" parent="." instance=ExtResource("14_epl0q")]
+visible = false
 
 [node name="BotaoPressao" parent="." node_paths=PackedStringArray("plataforma") instance=ExtResource("18_n1cxq")]
 visible = false
