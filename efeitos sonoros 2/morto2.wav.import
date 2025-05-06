@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dmp0cutst1oy0"
-path="res://.godot/imported/splash2.wav-41d31db8673062281776d4a4e75ed321.sample"
+uid="uid://cwi7xsbm8miqf"
+path="res://.godot/imported/morto2.wav-2a8104ab1a2b43cd5b7c84ede4206d35.sample"
 
 [deps]
 
-source_file="res://Smash/splash2.wav"
-dest_files=["res://.godot/imported/splash2.wav-41d31db8673062281776d4a4e75ed321.sample"]
+source_file="res://efeitos sonoros 2/morto2.wav"
+dest_files=["res://.godot/imported/morto2.wav-2a8104ab1a2b43cd5b7c84ede4206d35.sample"]
 
 [params]
 

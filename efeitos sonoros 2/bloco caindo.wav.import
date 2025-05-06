@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bk5m4l4nfvjeh"
-path="res://.godot/imported/bloco caindo.wav-eb9bf3ea5501dd7ae2fc48222a5a487b.sample"
+path="res://.godot/imported/bloco caindo.wav-00dca6997b650496ce088a51254822d4.sample"
 
 [deps]
 
-source_file="res://Smash/bloco caindo.wav"
-dest_files=["res://.godot/imported/bloco caindo.wav-eb9bf3ea5501dd7ae2fc48222a5a487b.sample"]
+source_file="res://efeitos sonoros 2/bloco caindo.wav"
+dest_files=["res://.godot/imported/bloco caindo.wav-00dca6997b650496ce088a51254822d4.sample"]
 
 [params]
 

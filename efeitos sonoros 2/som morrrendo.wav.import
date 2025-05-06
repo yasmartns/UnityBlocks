@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dx8r3ycx57k3s"
-path="res://.godot/imported/som morrrendo.wav-e3d5b91dda0820dc05cd6ab1460e55af.sample"
+path="res://.godot/imported/som morrrendo.wav-2a102b649408a49b053dc2aa63ebbbac.sample"
 
 [deps]
 
-source_file="res://Smash/som morrrendo.wav"
-dest_files=["res://.godot/imported/som morrrendo.wav-e3d5b91dda0820dc05cd6ab1460e55af.sample"]
+source_file="res://efeitos sonoros 2/som morrrendo.wav"
+dest_files=["res://.godot/imported/som morrrendo.wav-2a102b649408a49b053dc2aa63ebbbac.sample"]
 
 [params]
 

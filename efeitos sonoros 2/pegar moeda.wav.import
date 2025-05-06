@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d3dnx131es4dp"
-path="res://.godot/imported/pegar moeda.wav-71e6fba6c2e65fe9c6d464dd4d44660e.sample"
+path="res://.godot/imported/pegar moeda.wav-7f8ea02281808e0d9c5ce163d8b0b306.sample"
 
 [deps]
 
-source_file="res://Smash/pegar moeda.wav"
-dest_files=["res://.godot/imported/pegar moeda.wav-71e6fba6c2e65fe9c6d464dd4d44660e.sample"]
+source_file="res://efeitos sonoros 2/pegar moeda.wav"
+dest_files=["res://.godot/imported/pegar moeda.wav-7f8ea02281808e0d9c5ce163d8b0b306.sample"]
 
 [params]
 

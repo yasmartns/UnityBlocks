@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ceav0ikljqhhy"
-path="res://.godot/imported/pasos neve.wav-3d1f700e215e753d0405706a933dfb32.sample"
+path="res://.godot/imported/pasos neve.wav-6c483cbf6c651b9b183a2b550f4fc0e8.sample"
 
 [deps]
 
-source_file="res://Smash/pasos neve.wav"
-dest_files=["res://.godot/imported/pasos neve.wav-3d1f700e215e753d0405706a933dfb32.sample"]
+source_file="res://efeitos sonoros 2/pasos neve.wav"
+dest_files=["res://.godot/imported/pasos neve.wav-6c483cbf6c651b9b183a2b550f4fc0e8.sample"]
 
 [params]
 

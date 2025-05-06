@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://boe0lvsvb22sp"
-path="res://.godot/imported/som da porta.wav-31fe675729a43d793176305efce5cd64.sample"
+uid="uid://swh8jbgpyoda"
+path="res://.godot/imported/click (1).wav-27cbe56bf98d727ccc47aad6f0e190c0.sample"
 
 [deps]
 
-source_file="res://Smash/som da porta.wav"
-dest_files=["res://.godot/imported/som da porta.wav-31fe675729a43d793176305efce5cd64.sample"]
+source_file="res://efeitos sonoros 2/click (1).wav"
+dest_files=["res://.godot/imported/click (1).wav-27cbe56bf98d727ccc47aad6f0e190c0.sample"]
 
 [params]
 

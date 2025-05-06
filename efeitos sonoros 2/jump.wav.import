@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c500xkqj1h5kk"
-path="res://.godot/imported/click (2).wav-53315d76eaadb20bf4cca9d4790b329e.sample"
+uid="uid://djnbhttpisd7x"
+path="res://.godot/imported/jump.wav-557204e28029bc554122002e8dd14d47.sample"
 
 [deps]
 
-source_file="res://Smash/click (2).wav"
-dest_files=["res://.godot/imported/click (2).wav-53315d76eaadb20bf4cca9d4790b329e.sample"]
+source_file="res://efeitos sonoros 2/jump.wav"
+dest_files=["res://.godot/imported/jump.wav-557204e28029bc554122002e8dd14d47.sample"]
 
 [params]
 

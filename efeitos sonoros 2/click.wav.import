@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://d2goryj2x13lv"
-path="res://.godot/imported/lava.wav-2b97ae12cb1a0a513f573c322873ebbc.sample"
+uid="uid://i2k7dacbjasy"
+path="res://.godot/imported/click.wav-e8c7fd185950ca39a71fbbca400ee18c.sample"
 
 [deps]
 
-source_file="res://Smash/lava.wav"
-dest_files=["res://.godot/imported/lava.wav-2b97ae12cb1a0a513f573c322873ebbc.sample"]
+source_file="res://efeitos sonoros 2/click.wav"
+dest_files=["res://.godot/imported/click.wav-e8c7fd185950ca39a71fbbca400ee18c.sample"]
 
 [params]
 
