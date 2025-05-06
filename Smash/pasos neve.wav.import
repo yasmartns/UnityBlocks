@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ceav0ikljqhhy"
+path="res://.godot/imported/pasos neve.wav-3d1f700e215e753d0405706a933dfb32.sample"
+
+[deps]
+
+source_file="res://Smash/pasos neve.wav"
+dest_files=["res://.godot/imported/pasos neve.wav-3d1f700e215e753d0405706a933dfb32.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

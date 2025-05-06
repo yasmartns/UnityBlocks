@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dx8r3ycx57k3s"
+path="res://.godot/imported/som morrrendo.wav-e3d5b91dda0820dc05cd6ab1460e55af.sample"
+
+[deps]
+
+source_file="res://Smash/som morrrendo.wav"
+dest_files=["res://.godot/imported/som morrrendo.wav-e3d5b91dda0820dc05cd6ab1460e55af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
