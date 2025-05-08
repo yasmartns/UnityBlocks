@@ -354,6 +354,7 @@ destino = ExtResource("10_fnhbv")
 [node name="lever" parent="Door" groups=["players"] instance=ExtResource("10_q6ugd")]
 position = Vector2(-1, 16)
 next_level = "res://levels/world_02.tscn"
+objetivo = 1
 
 [node name="Players" type="Node2D" parent="."]
 position = Vector2(176, 376)

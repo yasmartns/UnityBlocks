@@ -20,4 +20,5 @@ func _on_pause_btn_pressed():
 
 
 func _on_quit_btn_2_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/tela_inicio_local.tscn")
