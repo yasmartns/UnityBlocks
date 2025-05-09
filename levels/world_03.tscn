@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dyt4q8yx76vt4"]
+[gd_scene load_steps=36 format=4 uid="uid://dyt4q8yx76vt4"]
 
 [ext_resource type="Script" uid="uid://ddeicrb5ub18r" path="res://scripts/world_01.gd" id="1_mtud3"]
 [ext_resource type="Texture2D" uid="uid://ksg415rpfsv6" path="res://assets/Background/ice-bg.png" id="2_8ku0a"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://0eobv357csns" path="res://efeitos sonoros/Puddle Reflections - Aesthetic Lofi.mp3" id="25_6nn07"]
 [ext_resource type="PackedScene" uid="uid://cvfpcoia8jape" path="res://scenes/coin.tscn" id="26_3mjrk"]
 [ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="27_rdqyn"]
+[ext_resource type="PackedScene" uid="uid://bstk5020dltbb" path="res://items/canvas_layer.tscn" id="29_5e4u7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_samdc"]
 texture = ExtResource("6_u2et6")
@@ -381,7 +382,8 @@ position = Vector2(254, 270)
 
 [node name="lever" parent="." instance=ExtResource("13_yyx5y")]
 position = Vector2(767, 335)
-next_level = "res://levels/world_01.tscn"
+next_level = "res://levels/world_04.tscn"
+objetivo = 10
 
 [node name="CameraFollow" type="Camera2D" parent="."]
 position = Vector2(352, 265)
@@ -421,7 +423,7 @@ collision_layer = 2
 script = ExtResource("21_l1cf5")
 
 [node name="Collision" type="CollisionShape2D" parent="Lava-Area"]
-position = Vector2(-25, 131)
+position = Vector2(55, 106)
 shape = SubResource("RectangleShape2D_0uwfl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lava-Area"]
@@ -504,6 +506,8 @@ position = Vector2(90, 212)
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("27_rdqyn")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("29_5e4u7")]
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_Door_body_exited"]

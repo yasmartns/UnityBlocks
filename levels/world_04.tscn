@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b4806ga1b52id"]
+[gd_scene load_steps=35 format=4 uid="uid://b4806ga1b52id"]
 
 [ext_resource type="Script" uid="uid://ddeicrb5ub18r" path="res://scripts/world_01.gd" id="1_yqvvs"]
 [ext_resource type="Texture2D" uid="uid://di6aqn2isnugj" path="res://assets/Background/bg-vulcao.png" id="2_08wrd"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://0eobv357csns" path="res://efeitos sonoros/Puddle Reflections - Aesthetic Lofi.mp3" id="25_5dl8k"]
 [ext_resource type="PackedScene" uid="uid://cvfpcoia8jape" path="res://scenes/coin.tscn" id="26_wfelu"]
 [ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="27_gpetr"]
+[ext_resource type="PackedScene" uid="uid://dhq1owvuoi4y" path="res://levels/lava.tscn" id="28_08wrd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_samdc"]
 texture = ExtResource("6_vojt5")
@@ -381,8 +382,10 @@ position = Vector2(197, 291)
 position = Vector2(237, 292)
 
 [node name="lever" parent="." instance=ExtResource("13_ct7bs")]
-position = Vector2(762, 308)
-next_level = "res://levels/world_01.tscn"
+position = Vector2(968, 414)
+scale = Vector2(0.96997, 1)
+next_level = "res://levels/world_05.tscn"
+objetivo = 38
 
 [node name="CameraFollow" type="Camera2D" parent="."]
 position = Vector2(421, 264)
@@ -618,6 +621,10 @@ position = Vector2(888, 416)
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("27_gpetr")
+
+[node name="lava" parent="." instance=ExtResource("28_08wrd")]
+position = Vector2(152, 412)
+scale = Vector2(0.917852, 2.35738)
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_Door_body_exited"]

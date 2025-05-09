@@ -353,16 +353,16 @@ destino = ExtResource("10_fnhbv")
 
 [node name="lever" parent="Door" groups=["players"] instance=ExtResource("10_q6ugd")]
 position = Vector2(-1, 16)
-next_level = "res://levels/world_02.tscn"
-objetivo = 1
+objetivo = 42
 
 [node name="Players" type="Node2D" parent="."]
 position = Vector2(176, 376)
 
 [node name="Player" parent="Players" instance=ExtResource("11_ncdwf")]
-position = Vector2(-40, -2)
+position = Vector2(-16, -54)
 
 [node name="MultiplayerPlayer" parent="Players" instance=ExtResource("12_whufi")]
+position = Vector2(-44, -52)
 
 [node name="CameraFollow" type="Camera2D" parent="." groups=["players"]]
 position = Vector2(312, 240)
@@ -630,6 +630,8 @@ position = Vector2(712, 384)
 position = Vector2(296, 384)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("25_5e75l")]
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("25_5e75l")]
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_Door_body_exited"]

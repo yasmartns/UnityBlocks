@@ -349,7 +349,7 @@ position = Vector2(135, 272)
 
 [node name="lever" parent="." instance=ExtResource("12_dp75u")]
 position = Vector2(542, 308)
-next_level = "res://levels/tutorial.tscn"
+next_level = "res://levels/world_02.tscn"
 objetivo = 1
 
 [node name="CameraFollow" type="Camera2D" parent="."]
