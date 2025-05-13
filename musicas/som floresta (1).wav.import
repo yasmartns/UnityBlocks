@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://405wf12hdyid"
+path="res://.godot/imported/som floresta (1).wav-fc27a8570bc1710d3ff4e0c2ec598b04.sample"
+
+[deps]
+
+source_file="res://musicas/som floresta (1).wav"
+dest_files=["res://.godot/imported/som floresta (1).wav-fc27a8570bc1710d3ff4e0c2ec598b04.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

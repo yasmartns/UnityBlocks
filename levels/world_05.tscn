@@ -484,7 +484,7 @@ limit_top = 50
 limit_right = 1095
 limit_bottom = 400
 script = ExtResource("15_bldeh")
-min_zoom = 0.9
+min_zoom = 0.5
 max_zoom = 0.9
 
 [node name="transition" type="CanvasLayer" parent="."]
@@ -561,7 +561,7 @@ position = Vector2(653, 185)
 position = Vector2(414, 310)
 
 [node name="coin9" parent="coins" instance=ExtResource("27_qcc4m")]
-position = Vector2(558, 317)
+position = Vector2(578, 258)
 
 [node name="coin10" parent="coins" instance=ExtResource("27_qcc4m")]
 position = Vector2(715, 324)
@@ -605,6 +605,9 @@ position = Vector2(461, 338)
 
 [node name="Caixa" parent="." instance=ExtResource("31_jaywk")]
 position = Vector2(181, 289)
+
+[node name="Caixa2" parent="." instance=ExtResource("31_jaywk")]
+position = Vector2(568, 321)
 
 [node name="agua" parent="." instance=ExtResource("32_ltqpc")]
 position = Vector2(15, 392)
