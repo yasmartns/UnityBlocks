@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var transition = get_parent().get_node("transition")
-@export var next_level : String = "res://levels/world_03.tscn"
+@export var next_level : String = "res://levels/world_02.tscn"
 @export var players: Array[Node] = []
 @export var objetivo: int = 0
 var playersDentro = []
@@ -16,7 +16,7 @@ func _on_body_entered(body: Node) -> void:
 			print("TESTE", objetivo)
 		Global.chave = true
 	else:
-		print("No scene Loaed")
+		print("No scene Loaded")
 		
 
 	

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c20rh78167agd" path="res://assets/Background/cloud-01.png" id="4_r1gyy"]
 [ext_resource type="Texture2D" uid="uid://cvpn4es005u5a" path="res://assets/Background/cloud-02.png" id="5_673k2"]
 [ext_resource type="Script" uid="uid://cayyksgv7spix" path="res://scripts/door.gd" id="5_q6a27"]
+[ext_resource type="Texture2D" uid="uid://oww8lcnf0oy8" path="res://assets/Terrain/Terrain 2.png" id="8_qannr"]
 [ext_resource type="PackedScene" uid="uid://bgnofix6aq5fp" path="res://levels/world_02.tscn" id="10_r0tcg"]
 [ext_resource type="PackedScene" uid="uid://bcjgp15qo6x8u" path="res://actors/multiplayer_player.tscn" id="11_jfqd0"]
 [ext_resource type="Script" uid="uid://b7ugjuqtp20tx" path="res://scripts/CameraFollow.gd" id="11_xc86x"]
@@ -259,11 +260,86 @@ texture = ExtResource("3_5udkp")
 8:2/0 = 0
 9:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjnak"]
+texture = ExtResource("8_qannr")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+4:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_dgy4p"]
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_samdc")
 sources/1 = SubResource("TileSetAtlasSource_l86n5")
+sources/2 = SubResource("TileSetAtlasSource_xjnak")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7k4mt"]
 shader = ExtResource("16_5fif6")
