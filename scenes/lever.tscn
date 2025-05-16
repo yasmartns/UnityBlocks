@@ -31,7 +31,7 @@ size = Vector2(32, 32)
 collision_layer = 16
 script = ExtResource("1_ncfea")
 
-[node name="confetti" type="GPUParticles2D" parent="." groups=["players"]]
+[node name="confetti" type="GPUParticles2D" parent="."]
 position = Vector2(0.166084, -43.3497)
 emitting = false
 amount = 32

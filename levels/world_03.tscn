@@ -372,7 +372,7 @@ script = ExtResource("10_gr1l7")
 objetivo = 10
 destino = ExtResource("11_rm8lc")
 
-[node name="Players" type="Node" parent="."]
+[node name="Players" type="Node" parent="." groups=["players"]]
 
 [node name="Player" parent="Players" instance=ExtResource("11_v3okx")]
 position = Vector2(201, 270)

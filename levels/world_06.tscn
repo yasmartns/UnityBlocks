@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://cfhcxlpe62iy7"]
+[gd_scene load_steps=40 format=4 uid="uid://cfhcxlpe62iy7"]
 
 [ext_resource type="Script" uid="uid://ddeicrb5ub18r" path="res://scripts/world_01.gd" id="1_q81a1"]
 [ext_resource type="Texture2D" uid="uid://ksg415rpfsv6" path="res://assets/Background/ice-bg.png" id="2_sy8p5"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cvfpcoia8jape" path="res://scenes/coin.tscn" id="27_13ae1"]
 [ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="28_t3cqv"]
 [ext_resource type="PackedScene" uid="uid://cygdf0gvy2ubf" path="res://items/falling_platform.tscn" id="29_dl7hx"]
+[ext_resource type="PackedScene" uid="uid://dim6l53iket6k" path="res://items/caixa.tscn" id="30_sy8p5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_samdc"]
 texture = ExtResource("6_csewm")
@@ -333,8 +334,11 @@ texture = ExtResource("9_wajds")
 1:8/0 = 0
 2:8/0 = 0
 4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:8/0 = 0
 8:8/0 = 0
 8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -348,8 +352,11 @@ texture = ExtResource("9_wajds")
 1:9/0 = 0
 2:9/0 = 0
 4:9/0 = 0
+4:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:9/0 = 0
+5:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:9/0 = 0
+6:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:9/0 = 0
 8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:9/0 = 0
@@ -361,8 +368,11 @@ texture = ExtResource("9_wajds")
 1:10/0 = 0
 2:10/0 = 0
 4:10/0 = 0
+4:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:10/0 = 0
+5:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:10/0 = 0
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:10/0 = 0
 8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:10/0 = 0
@@ -395,6 +405,21 @@ shader_parameter/line_color_b = Color(0.887285, 0.932199, 0.931839, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0uwfl"]
 size = Vector2(72.5, 24.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy8p5"]
+atlas = ExtResource("9_wajds")
+region = Rect2(112, 128, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gyxc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy8p5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="world_06" type="Node2D"]
 position = Vector2(288, 6)
@@ -450,7 +475,7 @@ centered = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(70, -2)
-tile_map_data = PackedByteArray("AAD1/xYAAwAEAAgAAAD2/xYAAwAFAAgAAAD3/xYAAwAFAAgAAAD4/xYAAwAFAAgAAAD5/xYAAwAFAAgAAAD6/xYAAwAFAAgAAAD7/xYAAwAFAAgAAAD8/xYAAwAGAAgAAAD1/xcAAwAEAAkAAAD1/xgAAwAEAAoAAAD2/xcAAwAFAAkAAAD2/xgAAwAFAAoAAAD3/xgAAwAFAAoAAAD3/xcAAwAFAAkAAAD4/xgAAwAFAAoAAAD4/xcAAwAFAAkAAAD5/xcAAwAFAAkAAAD5/xgAAwAFAAoAAAD6/xgAAwAFAAoAAAD6/xcAAwAFAAkAAAD7/xcAAwAFAAkAAAD8/xcAAwAGAAoAAAD7/xgAAwAGAAoAAAANABYAAwAEAAgAAAAOABYAAwAFAAgAAAAPABYAAwAFAAgAAAAQABYAAwAFAAgAAAARABYAAwAFAAgAAAASABYAAwAEAAkAAAATABYAAwAGAAkAAAATABUAAwAGAAkAAAATABQAAwAGAAkAAAATABMAAwAGAAkAAAATABIAAwAGAAkAAAASABUAAwAEAAkAAAASABQAAwAEAAkAAAASABMAAwAEAAkAAAASABIAAwAEAAkAAAASABEAAwAEAAgAAAATABEAAwAGAAgAAAANABcAAwAEAAkAAAAOABcAAwAFAAkAAAAPABcAAwAFAAkAAAAQABcAAwAFAAkAAAARABcAAwAGAAkAAAANABgAAwAEAAoAAAAOABgAAwAFAAoAAAAPABgAAwAFAAoAAAAQABgAAwAFAAoAAAARABgAAwAGAAoAAAASABcAAwAEAAkAAAATABcAAwAGAAkAAAASABgAAwAEAAoAAAATABgAAwAGAAoAAAA=")
+tile_map_data = PackedByteArray("AAAFABYAAwAFAAgAAAAGABYAAwAFAAgAAAAIABYAAwAFAAgAAAAHABYAAwAFAAgAAAAFABcAAwAFAAkAAAAFABgAAwAFAAoAAAAGABcAAwAFAAkAAAAGABgAAwAFAAoAAAAHABcAAwAFAAkAAAAHABgAAwAFAAoAAAAIABcAAwAFAAkAAAAIABgAAwAFAAoAAAAJABYAAwAFAAgAAAAJABUAAwAEAAkAAAAJABQAAwAEAAkAAAAJABMAAwAEAAkAAAAJABcAAwAFAAkAAAAJABgAAwAFAAoAAAAJABIAAwAEAAkAAAAJABEAAwAEAAkAAAAKABEAAwAFAAkAAAALABEAAwAGAAkAAAALABIAAwAGAAkAAAAKABIAAwAFAAkAAAAKABMAAwAFAAkAAAAKABQAAwAFAAkAAAAKABUAAwAFAAkAAAAKABYAAwAFAAgAAAAKABcAAwAFAAkAAAAKABgAAwAFAAoAAAALABMAAwAGAAkAAAALABQAAwAGAAkAAAALABUAAwAGAAkAAAALABYAAwAGAAgAAAALABgAAwAGAAoAAAALABcAAwAGAAkAAAAJABAAAwAEAAkAAAAJAA8AAwAEAAkAAAALABAAAwAGAAkAAAALAA8AAwAGAAkAAAAKAA8AAwAFAAkAAAAKABAAAwAFAAkAAAAJAA4AAwAEAAgAAAAKAA4AAwAFAAgAAAALAA4AAwAGAAgAAAAEABYAAwAFAAgAAAAEABcAAwAFAAkAAAAEABgAAwAFAAoAAAADABYAAwAEAAgAAAADABcAAwAEAAkAAAADABgAAwAEAAoAAADy/xYAAwAEAAgAAADy/xcAAwAEAAkAAADy/xgAAwAEAAoAAADz/xYAAwAFAAgAAADz/xcAAwAFAAkAAADz/xgAAwAFAAoAAAD0/xYAAwAFAAgAAAD0/xcAAwAFAAkAAAD0/xgAAwAFAAoAAAD1/xYAAwAFAAgAAAD2/xYAAwAGAAgAAAD1/xcAAwAFAAkAAAD2/xcAAwAFAAkAAAD2/xgAAwAGAAoAAAD1/xgAAwAFAAoAAAA=")
 tile_set = SubResource("TileSet_dgy4p")
 metadata/_edit_group_ = true
 
@@ -460,7 +485,7 @@ script = ExtResource("11_7irup")
 objetivo = 10
 destino = ExtResource("12_pqdav")
 
-[node name="Players" type="Node" parent="."]
+[node name="Players" type="Node" parent="." groups=["players"]]
 
 [node name="Player" parent="Players" instance=ExtResource("13_sihsx")]
 position = Vector2(217, 277)
@@ -482,7 +507,7 @@ limit_right = 1095
 limit_bottom = 400
 script = ExtResource("16_dgo2y")
 min_zoom = 0.9
-max_zoom = 0.9
+max_zoom = 1.5
 
 [node name="transition" type="CanvasLayer" parent="."]
 script = ExtResource("17_ul7xl")
@@ -580,13 +605,28 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("28_t3cqv")
 
 [node name="FallingPlatform6" parent="." instance=ExtResource("29_dl7hx")]
-position = Vector2(233, 444)
+position = Vector2(305, 233)
+scale = Vector2(1.4, 1.4)
 
 [node name="FallingPlatform2" parent="." instance=ExtResource("29_dl7hx")]
-position = Vector2(99, 362)
+position = Vector2(14, 357)
+scale = Vector2(0.6, 0.6)
+
+[node name="FallingPlatform10" parent="." instance=ExtResource("29_dl7hx")]
+position = Vector2(-51, 357)
+scale = Vector2(0.6, 0.6)
+
+[node name="FallingPlatform11" parent="." instance=ExtResource("29_dl7hx")]
+position = Vector2(-18, 376)
+scale = Vector2(0.6, 0.6)
 
 [node name="FallingPlatform3" parent="." instance=ExtResource("29_dl7hx")]
-position = Vector2(184, 362)
+position = Vector2(45, 337)
+scale = Vector2(0.6, 0.6)
+
+[node name="FallingPlatform9" parent="." instance=ExtResource("29_dl7hx")]
+position = Vector2(82, 356)
+scale = Vector2(0.6, 0.6)
 
 [node name="FallingPlatform4" parent="." instance=ExtResource("29_dl7hx")]
 position = Vector2(315, 466)
@@ -595,10 +635,20 @@ position = Vector2(315, 466)
 position = Vector2(388, 479)
 
 [node name="FallingPlatform7" parent="." instance=ExtResource("29_dl7hx")]
-position = Vector2(236, 470)
+position = Vector2(371, 191)
+scale = Vector2(1.4, 1.4)
 
 [node name="FallingPlatform8" parent="." instance=ExtResource("29_dl7hx")]
 position = Vector2(448, 452)
+
+[node name="Caixa" parent="." instance=ExtResource("30_sy8p5")]
+position = Vector2(162, 337)
+
+[node name="chocolate" type="AnimatedSprite2D" parent="Caixa"]
+position = Vector2(5.72205e-06, -2.01464e-05)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_gyxc4")
+frame_progress = 0.380032
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_Door_body_exited"]

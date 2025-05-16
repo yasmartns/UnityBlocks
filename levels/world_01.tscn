@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dithgdis7k544"]
+[gd_scene load_steps=33 format=4 uid="uid://5mx2c41i4cqt"]
 
 [ext_resource type="Script" uid="uid://ddeicrb5ub18r" path="res://scripts/world_01.gd" id="1_yw1rq"]
 [ext_resource type="PackedScene" uid="uid://c78k16sm2u2x7" path="res://actors/player.tscn" id="2_qyvkc"]
@@ -414,25 +414,25 @@ script = ExtResource("5_q6a27")
 objetivo = 1
 destino = ExtResource("10_r0tcg")
 
-[node name="Players" type="Node" parent="."]
+[node name="Players" type="Node" parent="." groups=["players"]]
 
 [node name="Player" parent="Players" instance=ExtResource("2_qyvkc")]
 position = Vector2(16, 84)
 
 [node name="MultiplayerPlayer" parent="Players" instance=ExtResource("11_jfqd0")]
-position = Vector2(52, 82)
+position = Vector2(65, 86)
+scale = Vector2(1, 1)
 
 [node name="lever" parent="." instance=ExtResource("12_dp75u")]
 position = Vector2(726, 512)
-next_level = "res://levels/world_02.tscn"
 objetivo = 13
 
 [node name="CameraFollow" type="Camera2D" parent="."]
 position = Vector2(313, 243)
 limit_left = 0
 script = ExtResource("11_xc86x")
-min_zoom = 1.2
-max_zoom = 1.0
+min_zoom = 0.8
+max_zoom = 1.2
 
 [node name="transition" type="CanvasLayer" parent="."]
 script = ExtResource("15_o0pi2")
@@ -456,10 +456,9 @@ plataforma = NodePath("../Plataforma")
 [node name="Plataforma" parent="." instance=ExtResource("19_xjnak")]
 position = Vector2(462, 439)
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("player1", "player2", "respawn_point")]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("player2", "respawn_point")]
 unique_name_in_owner = true
 script = ExtResource("22_imfvm")
-player1 = NodePath("../Players/MultiplayerPlayer")
 player2 = NodePath("../Players/Player")
 respawn_point = NodePath("RespawnPoint")
 
@@ -492,11 +491,11 @@ position = Vector2(196, 379)
 rotation = 0.239494
 
 [node name="coin11" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(32, 456)
+position = Vector2(45, 459)
 rotation = 0.239494
 
 [node name="coin12" parent="coins" instance=ExtResource("24_o0pi2")]
-position = Vector2(98, 456)
+position = Vector2(88, 459)
 rotation = 0.239494
 
 [node name="coin6" parent="coins" instance=ExtResource("24_o0pi2")]
@@ -526,6 +525,14 @@ stream = SubResource("AudioStream_ao123")
 
 [node name="espinhos" parent="." instance=ExtResource("25_5fif6")]
 position = Vector2(15, 580)
+
+[node name="espinhos6" parent="." instance=ExtResource("25_5fif6")]
+visible = false
+position = Vector2(-93, 580)
+
+[node name="espinhos7" parent="." instance=ExtResource("25_5fif6")]
+visible = false
+position = Vector2(-197, 579)
 
 [node name="espinhos2" parent="." instance=ExtResource("25_5fif6")]
 position = Vector2(122, 580)

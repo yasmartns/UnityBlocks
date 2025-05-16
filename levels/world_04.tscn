@@ -373,7 +373,7 @@ position = Vector2(495, 238)
 [node name="FallingPlatform3" parent="." instance=ExtResource("11_08wrd")]
 position = Vector2(560, 216)
 
-[node name="Players" type="Node" parent="."]
+[node name="Players" type="Node" parent="." groups=["players"]]
 
 [node name="Player" parent="Players" instance=ExtResource("11_g3g5v")]
 position = Vector2(197, 291)
