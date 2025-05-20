@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3ifsie2h04gy"]
+
+[ext_resource type="Script" uid="uid://c06sh4jen8qrn" path="res://scripts/caixa.gd" id="1_i2vea"]
+[ext_resource type="Texture2D" uid="uid://c73xnjwcphvw4" path="res://assets/Items/Boxes/Box1/Idle.png" id="2_fk7g3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2vea"]
+
+[node name="caixa" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_i2vea")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fk7g3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i2vea")

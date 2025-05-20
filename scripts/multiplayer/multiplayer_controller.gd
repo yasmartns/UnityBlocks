@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var speed: float = 200.0
 const SPEED = 100.0
 const JUMP_FORCE = -400.0
 
@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animation.play("idle")
 
-
+	apply_push_force()
 	move_and_slide()
 	
 	for platforms in get_slide_collision_count():
@@ -52,3 +52,15 @@ func respawn():
 	print(respawn_point.position)
 	if respawn_point:
 		position = respawn_point.position
+# Quando colidir e apertar botão, empurra a caixa
+
+
+
+
+
+func apply_push_force():  # Empurra a caixa
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is Caixa:
+			var caixa = collision.get_collider() as Caixa
+			caixa.slide_object(-collision.get_normal())  # Empurra a caixa para a direção oposta ao normal da colisão
