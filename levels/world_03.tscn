@@ -25,8 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://b3a3sryiyrq7p" path="res://assets/Items/Lava(Dano)/lava.png" id="22_yi551"]
 [ext_resource type="PackedScene" uid="uid://bllfwbvwni8mm" path="res://scenes/espinhos.tscn" id="23_gqs8x"]
 [ext_resource type="Script" uid="uid://c83vrgewiy1ig" path="res://scripts/game_manager.gd" id="24_yqccc"]
-[ext_resource type="AudioStream" uid="uid://0eobv357csns" path="res://efeitos sonoros/Puddle Reflections - Aesthetic Lofi.mp3" id="25_6nn07"]
 [ext_resource type="PackedScene" uid="uid://cvfpcoia8jape" path="res://scenes/coin.tscn" id="26_3mjrk"]
+[ext_resource type="AudioStream" uid="uid://0mcth8t6k4m0" path="res://musicas/som neve .wav" id="26_5e4u7"]
 [ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="27_rdqyn"]
 [ext_resource type="PackedScene" uid="uid://bstk5020dltbb" path="res://items/canvas_layer.tscn" id="29_5e4u7"]
 
@@ -467,7 +467,7 @@ unique_name_in_owner = true
 position = Vector2(264, 220)
 
 [node name="musica" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("25_6nn07")
+stream = ExtResource("26_5e4u7")
 autoplay = true
 
 [node name="coins" type="Node2D" parent="."]

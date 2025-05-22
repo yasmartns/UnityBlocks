@@ -4,7 +4,7 @@ func _enter_tree() -> void:#multiplayer 2
 	set_multiplayer_authority(name.to_int())
 	
 const SPEED = 100.0
-const JUMP_FORCE = -200.0
+const JUMP_FORCE = -250.0
 
 @onready var animation := $Animation as AnimatedSprite2D
 var is_jumping := false

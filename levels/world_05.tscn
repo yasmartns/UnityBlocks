@@ -30,7 +30,7 @@
 [ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="28_bj0gf"]
 [ext_resource type="PackedScene" uid="uid://cygdf0gvy2ubf" path="res://items/falling_platform.tscn" id="29_u8p8x"]
 [ext_resource type="PackedScene" uid="uid://bstk5020dltbb" path="res://items/canvas_layer.tscn" id="30_nxnhp"]
-[ext_resource type="PackedScene" uid="uid://dim6l53iket6k" path="res://items/caixa.tscn" id="31_jaywk"]
+[ext_resource type="PackedScene" uid="uid://d3ifsie2h04gy" path="res://scenes/caixa.tscn" id="32_3u8ev"]
 [ext_resource type="PackedScene" uid="uid://c7b8nod2ai8ip" path="res://scenes/agua.tscn" id="32_ltqpc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_samdc"]
@@ -473,7 +473,7 @@ position = Vector2(258, 276)
 
 [node name="lever" parent="." instance=ExtResource("14_d4lfn")]
 position = Vector2(774, 338)
-next_level = "res://levels/world_01.tscn"
+next_level = "res://levels/world_06.tscn"
 objetivo = 12
 
 [node name="CameraFollow" type="Camera2D" parent="."]
@@ -543,7 +543,7 @@ autoplay = true
 [node name="coins" type="Node2D" parent="."]
 
 [node name="coin" parent="coins" instance=ExtResource("27_qcc4m")]
-position = Vector2(146, 175)
+position = Vector2(191, 256)
 
 [node name="coin6" parent="coins" instance=ExtResource("27_qcc4m")]
 position = Vector2(264, 219)
@@ -570,13 +570,13 @@ position = Vector2(715, 324)
 position = Vector2(358, 315)
 
 [node name="coin2" parent="coins" instance=ExtResource("27_qcc4m")]
-position = Vector2(-75, 182)
+position = Vector2(-50, 234)
 
 [node name="coin3" parent="coins" instance=ExtResource("27_qcc4m")]
-position = Vector2(92, 177)
+position = Vector2(83, 188)
 
 [node name="coin4" parent="coins" instance=ExtResource("27_qcc4m")]
-position = Vector2(36, 177)
+position = Vector2(27, 186)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -584,13 +584,10 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("28_bj0gf")
 
 [node name="FallingPlatform" parent="." instance=ExtResource("29_u8p8x")]
-position = Vector2(91, 208)
+position = Vector2(81, 215)
 
 [node name="FallingPlatform6" parent="." instance=ExtResource("29_u8p8x")]
-position = Vector2(38, 209)
-
-[node name="FallingPlatform2" parent="." instance=ExtResource("29_u8p8x")]
-position = Vector2(146, 209)
+position = Vector2(25, 215)
 
 [node name="FallingPlatform3" parent="." instance=ExtResource("29_u8p8x")]
 position = Vector2(356, 337)
@@ -603,14 +600,14 @@ position = Vector2(461, 338)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("30_nxnhp")]
 
-[node name="Caixa" parent="." instance=ExtResource("31_jaywk")]
-position = Vector2(181, 289)
-
-[node name="Caixa2" parent="." instance=ExtResource("31_jaywk")]
-position = Vector2(568, 321)
-
 [node name="agua" parent="." instance=ExtResource("32_ltqpc")]
 position = Vector2(15, 392)
+
+[node name="caixa" parent="." instance=ExtResource("32_3u8ev")]
+position = Vector2(164, 292)
+
+[node name="caixa2" parent="." instance=ExtResource("32_3u8ev")]
+position = Vector2(570, 324)
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_Door_body_exited"]

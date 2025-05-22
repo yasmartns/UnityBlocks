@@ -10,6 +10,7 @@ func add_point():
 	score += 1
 
 func respawn_players():
+	
 	if player1 and player2 and respawn_point:
 		player1.position = respawn_point.position
 		player2.position = respawn_point.position

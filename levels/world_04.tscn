@@ -24,7 +24,7 @@
 [ext_resource type="Script" uid="uid://wn473gdespmc" path="res://scripts/lava_area.gd" id="21_puwrt"]
 [ext_resource type="Texture2D" uid="uid://b3a3sryiyrq7p" path="res://assets/Items/Lava(Dano)/lava.png" id="22_xixpl"]
 [ext_resource type="Script" uid="uid://c83vrgewiy1ig" path="res://scripts/game_manager.gd" id="24_su6wh"]
-[ext_resource type="AudioStream" uid="uid://0eobv357csns" path="res://efeitos sonoros/Puddle Reflections - Aesthetic Lofi.mp3" id="25_5dl8k"]
+[ext_resource type="AudioStream" uid="uid://dgd6uus1405s8" path="res://musicas/som-do-jogo-fase-do-fogo.wav" id="25_08wrd"]
 [ext_resource type="PackedScene" uid="uid://cvfpcoia8jape" path="res://scenes/coin.tscn" id="26_wfelu"]
 [ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="27_gpetr"]
 [ext_resource type="PackedScene" uid="uid://dhq1owvuoi4y" path="res://levels/lava.tscn" id="28_08wrd"]
@@ -510,7 +510,9 @@ unique_name_in_owner = true
 position = Vector2(237, 269)
 
 [node name="musica" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("25_5dl8k")
+stream = ExtResource("25_08wrd")
+volume_db = 10.895
+pitch_scale = 0.97
 autoplay = true
 
 [node name="coins" type="Node2D" parent="."]
