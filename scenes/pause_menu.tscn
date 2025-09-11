@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://cryxyf156txmu"]
+
+[ext_resource type="Script" uid="uid://ch07u01fn2id" path="res://scripts/pause_menu.gd" id="1_0vb2g"]
+[ext_resource type="Theme" uid="uid://di1uyrlheoldq" path="res://themes/defalt_btn.tres" id="1_csf6b"]
+[ext_resource type="FontFile" uid="uid://cqsajjqkx6jkj" path="res://fonts/I-pixel-u.ttf" id="2_hnibp"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_qv6bw"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_nchab"]
+events = [SubResource("InputEventAction_qv6bw")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6768l"]
+
+[node name="Pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_0vb2g")
+
+[node name="bg_overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.403922)
+
+[node name="menu_holder" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -26.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Pause_btn" type="Button" parent="menu_holder"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_csf6b")
+shortcut = SubResource("Shortcut_nchab")
+text = "  VOLTAR  "
+
+[node name="HSeparator" type="HSeparator" parent="menu_holder"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6768l")
+
+[node name="Quit_btn2" type="Button" parent="menu_holder"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_csf6b")
+text = " QUIT GAME "
+
+[node name="Label" type="Label" parent="."]
+offset_left = 254.0
+offset_top = 84.0
+offset_right = 402.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("2_hnibp")
+text = "TELA DE PAUSA"
+
+[connection signal="pressed" from="menu_holder/Pause_btn" to="." method="_on_pause_btn_pressed"]
+[connection signal="pressed" from="menu_holder/Quit_btn2" to="." method="_on_quit_btn_2_pressed"]

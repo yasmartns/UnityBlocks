@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwi7xsbm8miqf"
+path="res://.godot/imported/morto2.wav-2a8104ab1a2b43cd5b7c84ede4206d35.sample"
+
+[deps]
+
+source_file="res://efeitos sonoros 2/morto2.wav"
+dest_files=["res://.godot/imported/morto2.wav-2a8104ab1a2b43cd5b7c84ede4206d35.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

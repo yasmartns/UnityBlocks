@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwg1x5ncguhws"
+path="res://.godot/imported/som de game over 1.wav-a1d0835cb15841aba8d1641319d26f31.sample"
+
+[deps]
+
+source_file="res://efeitos sonoros 2/som de game over 1.wav"
+dest_files=["res://.godot/imported/som de game over 1.wav-a1d0835cb15841aba8d1641319d26f31.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

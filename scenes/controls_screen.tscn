@@ -1,0 +1,137 @@
+[gd_scene load_steps=14 format=3 uid="uid://bwxc4l1doibmq"]
+
+[ext_resource type="FontFile" uid="uid://dl8yj2ntmcyrb" path="res://fonts/at01.ttf" id="1_14ark"]
+[ext_resource type="Script" uid="uid://q7c4242p6nt3" path="res://scripts/controls_screen.gd" id="1_rkcrn"]
+[ext_resource type="Theme" uid="uid://di1uyrlheoldq" path="res://themes/defalt_btn.tres" id="2_42cmc"]
+[ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="3_0ymc5"]
+[ext_resource type="Texture2D" uid="uid://d3og48syaujm7" path="res://Gray_Buttons_Pixel.png" id="4_uc4ds"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vu3c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm38w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5laj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmbyd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0elq"]
+atlas = ExtResource("4_uc4ds")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sbnhn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0elq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bg04"]
+atlas = ExtResource("4_uc4ds")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvjpt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bg04")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ControlsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rkcrn")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.627451)
+
+[node name="info" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -3.0
+offset_top = 25.0
+offset_right = 640.0
+offset_bottom = 361.0
+theme_override_fonts/font = ExtResource("1_14ark")
+text = "CONTROLES
+
+PLAYER 1:
+ANDAR PARA A ESQUERDA \"A\"
+
+ANDAR PARA A DIREITA \"D\"
+
+PULAR \"ESPACO\"
+
+PLAYER 2:
+SETINHAS
+
+"
+horizontal_alignment = 1
+
+[node name="Returnbtn" type="Button" parent="."]
+layout_mode = 1
+offset_left = 26.0
+offset_top = 15.0
+offset_right = 101.0
+offset_bottom = 31.0
+theme = ExtResource("2_42cmc")
+theme_override_colors/font_hover_color = Color(0.984314, 0.756863, 0.121569, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.756863, 0.121569, 1)
+theme_override_fonts/font = ExtResource("3_0ymc5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1vu3c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wm38w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s5laj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pmbyd")
+text = "VOLTAR"
+
+[node name="Returnbtn2" type="Button" parent="."]
+layout_mode = 1
+offset_left = 12.0
+offset_top = 15.0
+offset_right = 30.0
+offset_bottom = 32.0
+theme = ExtResource("2_42cmc")
+theme_override_colors/font_hover_color = Color(0.984314, 0.756863, 0.121569, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.756863, 0.121569, 1)
+theme_override_fonts/font = ExtResource("3_0ymc5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1vu3c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wm38w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s5laj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pmbyd")
+text = "."
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(21, 23)
+scale = Vector2(1.4375, 1.375)
+sprite_frames = SubResource("SpriteFrames_sbnhn")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(273, 31)
+scale = Vector2(1.375, 1.5)
+sprite_frames = SubResource("SpriteFrames_vvjpt")
+
+[connection signal="pressed" from="Returnbtn" to="." method="_on_returnbtn_pressed"]
+[connection signal="pressed" from="Returnbtn2" to="." method="_on_returnbtn_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://d22xcxeopmjse"]
+
+[ext_resource type="Script" uid="uid://c06sh4jen8qrn" path="res://scripts/caixa.gd" id="1_maura"]
+[ext_resource type="Texture2D" uid="uid://c73xnjwcphvw4" path="res://assets/Items/Boxes/Box1/Idle.png" id="2_ein2n"]
+[ext_resource type="Texture2D" uid="uid://oww8lcnf0oy8" path="res://assets/Terrain/Terrain 2.png" id="3_kinmx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2vea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8o7o"]
+atlas = ExtResource("3_kinmx")
+region = Rect2(112, 128, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7pa5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8o7o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="chocoloate" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_maura")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ein2n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i2vea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, 5.36442e-07)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_q7pa5")

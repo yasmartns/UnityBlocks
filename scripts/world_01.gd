@@ -9,3 +9,11 @@ func join_as_player_2():
 	print("Join as player 2")
 	%MultiplayerHUD.hide()
 	MultiplayerManager.join_as_player_2()
+	
+
+
+func _ready() -> void:
+	pass
+	
+func _on_lever_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

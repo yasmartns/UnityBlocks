@@ -1,4 +1,5 @@
-extends MultiplayerSynchronizer
+
+extends MultiplayerSynchronizer 
 
 @onready var player = $".."
 
@@ -18,7 +19,8 @@ func _physics_process(_delta: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("
+	ui_accept"):
 		jump.rpc()
 		
 @rpc("call_local")

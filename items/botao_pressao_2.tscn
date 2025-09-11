@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://de6tphpnu73s3"]
+
+[ext_resource type="Script" uid="uid://l8ov5bcmgrq7" path="res://items/botao_pressao_2.gd" id="1_p7jut"]
+[ext_resource type="Texture2D" uid="uid://bw6xeocyitobu" path="res://assets/Items/Botão&Plataforma/botão-sprite.png" id="2_dwy08"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1f4v"]
+size = Vector2(28, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsnoj"]
+atlas = ExtResource("2_dwy08")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjhx0"]
+atlas = ExtResource("2_dwy08")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxmii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsnoj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjhx0")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[node name="BotaoPressao2" type="Area2D"]
+script = ExtResource("1_p7jut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_f1f4v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_kxmii")
+animation = &"idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

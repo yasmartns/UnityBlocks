@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dx8r3ycx57k3s"
+path="res://.godot/imported/som morrrendo.wav-2a102b649408a49b053dc2aa63ebbbac.sample"
+
+[deps]
+
+source_file="res://efeitos sonoros 2/som morrrendo.wav"
+dest_files=["res://.godot/imported/som morrrendo.wav-2a102b649408a49b053dc2aa63ebbbac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

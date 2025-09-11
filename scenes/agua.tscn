@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7b8nod2ai8ip"]
+
+[ext_resource type="Script" uid="uid://dy4600w2aj7wb" path="res://scripts/agua.gd" id="1_wrhic"]
+[ext_resource type="AudioStream" uid="uid://dmp0cutst1oy0" path="res://efeitos sonoros 2/splash2.wav" id="2_astc6"]
+[ext_resource type="AudioStream" uid="uid://djnbhttpisd7x" path="res://efeitos sonoros 2/jump.wav" id="3_astc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqq6q"]
+size = Vector2(685, 20)
+
+[node name="agua" type="Area2D"]
+script = ExtResource("1_wrhic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(332.5, 0)
+shape = SubResource("RectangleShape2D_pqq6q")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_astc6")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(92, -83)
+stream = ExtResource("3_astc6")
+pitch_scale = 0.35
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

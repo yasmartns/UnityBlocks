@@ -1,10 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://c78k16sm2u2x7"]
+[gd_scene load_steps=16 format=3 uid="uid://c78k16sm2u2x7"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_rj8l3"]
+[ext_resource type="Script" uid="uid://5u05oqf1hp74" path="res://scripts/player.gd" id="1_rj8l3"]
 [ext_resource type="Texture2D" uid="uid://be25bmaeuliya" path="res://assets/Main Characters/Blocks/blueblock-Sheet.png" id="2_rck36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bc12"]
-size = Vector2(20, 30)
+size = Vector2(13, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83utr"]
+atlas = ExtResource("2_rck36")
+region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xju0p"]
 atlas = ExtResource("2_rck36")
@@ -46,6 +50,14 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_83utr")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xju0p")
 }, {
 "duration": 1.0,
@@ -59,7 +71,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 15.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -84,19 +96,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 15.0
+"speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
-collision_mask = 2
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ug4e4"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D" groups=["players"]]
+collision_mask = 3
 script = ExtResource("1_rj8l3")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_7bc12")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_qcf8n")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.47112
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_ug4e4")

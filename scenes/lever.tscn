@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpne25ywqny5u"]
+
+[ext_resource type="Script" uid="uid://b4mnvapjm085s" path="res://scripts/lever.gd" id="1_ncfea"]
+
+[sub_resource type="Gradient" id="1"]
+offsets = PackedFloat32Array(0, 0.610577, 1)
+colors = PackedColorArray(0.989089, 0.203845, 0, 1, 0.524245, 0.119424, 0.0143348, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="2"]
+gradient = SubResource("1")
+
+[sub_resource type="Curve" id="3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.320061), 0.2, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="4"]
+curve = SubResource("3")
+
+[sub_resource type="ParticleProcessMaterial" id="5"]
+direction = Vector3(0, -1, 0)
+gravity = Vector3(0, 100, 0)
+scale_min = 0.0
+scale_max = 0.0
+scale_curve = SubResource("4")
+color_ramp = SubResource("2")
+
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(32, 32)
+
+[node name="lever" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_ncfea")
+
+[node name="confetti" type="GPUParticles2D" parent="."]
+position = Vector2(0.166084, -43.3497)
+emitting = false
+amount = 32
+explosiveness = 0.6
+randomness = 0.2
+process_material = SubResource("5")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("6")
+
+[node name="victoryFx" type="AudioStreamPlayer2D" parent="."]
+volume_db = -25.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

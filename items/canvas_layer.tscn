@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bstk5020dltbb"]
+
+[ext_resource type="Script" uid="uid://eo2a3quf4l05" path="res://scripts/canvas_layer.gd" id="1_egnhb"]
+[ext_resource type="Texture2D" uid="uid://ddlhar0bsjmcn" path="res://Items & UI/Common Pick-ups/Coin (16 x 16).png" id="2_66wwx"]
+[ext_resource type="FontFile" uid="uid://dgynk4vrrttwl" path="res://fonts/Classic-Font.ttf" id="3_3rudn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lthn"]
+atlas = ExtResource("2_66wwx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjg6o"]
+atlas = ExtResource("2_66wwx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogv82"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lthn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjg6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_egnhb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_ogv82")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 29.0
+offset_top = 3.0
+offset_right = 69.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("3_3rudn")
+theme_override_font_sizes/font_size = 32
+text = "0"
